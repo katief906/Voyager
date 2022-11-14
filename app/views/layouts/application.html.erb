@@ -7,21 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-  <nav class="top-bar">
-    <h1><a href="/">Voyager</a></h1>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+  <div data-sticky-container>
+    <nav class="top-bar sticky" data-sticky data-margin-top="0">
+      <h1><a class="navbar-title" href="/">VOYAGER</a></h1>
+      <div class="menu">
+        <h5 class="navbar-link">
+          <%- if current_user -%>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-link" %>
+          <%- else -%>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "navbar-link" %>
+            <%= link_to 'Sign In', new_user_session_path, class: "navbar-link" %>
+          <%- end -%>
+        </h5>
+      </div>
+      </section>
+    </nav>
+  </div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -29,17 +30,27 @@
     </div>
   <%- end -%>
 
-  <%= yield %>
+  <div class="page-body">
+    <%= yield %>
 
-  <%= javascript_include_tag 'application' %>
-  
-  <%- if Rails.env.development? || Rails.env.test? -%> 
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+    <%= javascript_include_tag 'application' %>
+    
+    <%- if Rails.env.development? || Rails.env.test? -%> 
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
     <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
-  
-  <%= yield :extra_footer %>
+    <%= javascript_pack_tag 'application' %>
+    
+    <%= yield :extra_footer %>
+  </div>
 </body>
+<footer class="footer">
+  <h5>
+    <ul class="footer-menu">
+      <li class="footer-link">About the Developer</li>
+      <li class="footer-link">FAQs</li>
+    </ul>
+  </h5>
+</footer>
 </html>

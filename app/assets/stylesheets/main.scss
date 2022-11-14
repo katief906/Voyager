@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Condiment');
+
+h1,h2,h3,h4,h5,h6,p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.top-bar{
+  background-color: #023047;
+}
+
+.top-bar>ul{
+  background-color: #023047;
+}
+
+.navbar-title{
+  font-family: Condiment, sans-serif;
+  background-color: #023047;
+  color: #FFFFFF;
+
+  &:hover{
+    color: #FFD5C2;
+  }
+}
+
+.navbar-link{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: inline-flex;
+  background-color: #023047;
+  color: #FFFFFF;
+
+  &:hover{
+    color: #FFD5C2;
+  }
+}
+
+.page-body{
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-bottom: 15em;
+}
+
+.footer{
+  background-color: #023047;
+  color: #FFFFFF;
+  height: auto;
+  margin: 0em;
+  padding: 1em;
+}
+
+.footer-menu{
+  display: block;
+}
+
+.footer-link{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #023047;
+  color: #FFFFFF;
+
+  &:hover{
+    color: #FFD5C2;
+  }
+}
