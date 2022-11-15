@@ -33,7 +33,7 @@ const ItinerariesIndexPage = (props) => {
 
   return(
     <div>
-      <h1>All Itineraries</h1>
+      <h1>All Itineraries:</h1>
       {itineraryTiles}
     </div>
   )

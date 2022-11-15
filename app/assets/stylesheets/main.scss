@@ -1,46 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Condiment');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-h1,h2,h3,h4,h5,h6,p{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+h1{
+  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+}
+
+h2,h3,h4,h5,h6,p{
+  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
 }
 
 .top-bar{
-  background-color: #023047;
+  background-color: #2D3047;
 }
 
 .top-bar>ul{
-  background-color: #023047;
+  background-color: #2D3047;
 }
 
 .navbar-title{
-  font-family: Condiment, sans-serif;
-  background-color: #023047;
+  font-family: 'Notable';
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  font-size: 1.25em;
+  background-color: #2D3047;
   color: #FFFFFF;
 
   &:hover{
-    color: #FFD5C2;
+    color: #FFD5c2;
   }
 }
 
 .navbar-link{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
   display: inline-flex;
-  background-color: #023047;
+  background-color: #2D3047;
   color: #FFFFFF;
 
   &:hover{
-    color: #FFD5C2;
+    color: #FFD5c2;
   }
 }
 
-.page-body{
-  margin-left: 1em;
-  margin-right: 1em;
-  padding-bottom: 15em;
-}
-
 .footer{
-  background-color: #023047;
+  background-color: #2D3047;
   color: #FFFFFF;
   height: auto;
   margin: 0em;
@@ -52,11 +58,36 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 .footer-link{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #023047;
+  font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  background-color: #2D3047;
   color: #FFFFFF;
 
   &:hover{
-    color: #FFD5C2;
+    color: #FFD5c2;
   }
+}
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.page-header, .page-footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.page-body{
+  margin: 1em;
+  flex-grow: 1;
 }
