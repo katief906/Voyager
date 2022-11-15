@@ -6,21 +6,20 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="wrapper">
   <div data-sticky-container>
     <nav class="top-bar sticky" data-sticky data-margin-top="0">
       <h1><a class="navbar-title" href="/">VOYAGER</a></h1>
       <div class="menu">
-        <h5 class="navbar-link">
+        <h4 class="navbar-link">
           <%- if current_user -%>
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-link" %>
           <%- else -%>
             <%= link_to 'Sign Up', new_user_registration_path, class: "navbar-link" %>
             <%= link_to 'Sign In', new_user_session_path, class: "navbar-link" %>
           <%- end -%>
-        </h5>
+        </h4>
       </div>
-      </section>
     </nav>
   </div>
 
@@ -45,12 +44,10 @@
     <%= yield :extra_footer %>
   </div>
 </body>
-<footer class="footer">
-  <h5>
-    <ul class="footer-menu">
-      <li class="footer-link">About the Developer</li>
-      <li class="footer-link">FAQs</li>
-    </ul>
-  </h5>
+<footer class="page-footer footer">
+  <ul class="footer-menu">
+    <li class="footer-link">About the Developer</li>
+    <li class="footer-link">FAQs</li>
+  </ul>
 </footer>
 </html>
