@@ -1,6 +1,6 @@
-class CreateItineraries < ActiveRecord::Migration[5.2]
+class CreateContinents < ActiveRecord::Migration[5.2]
   def change
-    create_table :itineraries do |t|
+    create_table :continents do |t|
       t.string :name, null: false
       t.string :picture
       

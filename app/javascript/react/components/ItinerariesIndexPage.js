@@ -32,9 +32,11 @@ const ItinerariesIndexPage = (props) => {
   })
 
   return(
-    <div>
-      <h1>All Itineraries:</h1>
-      {itineraryTiles}
+    <div className="grid-container">
+      <h1 className="cell">All Itineraries:</h1>
+      <div className="grid-x grid-margin-x equal-height-cards">
+        {itineraryTiles}
+      </div>
     </div>
   )
 }

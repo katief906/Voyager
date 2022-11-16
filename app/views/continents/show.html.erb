@@ -1,0 +1,14 @@
+<div class="grid-container">
+  <h1 class="cell page-title">Countries in <%= @continent.name %></h1>
+  <div class="grid-x grid-margin-x equal-height-cards">
+      <% @countries.each do |country| %>
+        <div class="cell small-12 medium-6 large-4">
+          <div class="card">
+            <div class="card-section">
+              <h3><%= link_to country.name, country_path(country) %><h3>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
