@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+// .color-palette{
+//   dark-blue: #1A385A;
+//   light-blue: #769ABE;
+//   bright-orange: #E46F44;
+//   light-pink:#E8AA9B;
+//   gray-purple: #DCD5DC;
+// }
+
 h1{
   font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 500;
@@ -13,11 +21,11 @@ h2,h3,h4,h5,h6,p{
 }
 
 .top-bar{
-  background-color: #2D3047;
+  background-color: #1A385A;
 }
 
 .top-bar>ul{
-  background-color: #2D3047;
+  background-color: #1A385A;
 }
 
 .navbar-title{
@@ -25,7 +33,7 @@ h2,h3,h4,h5,h6,p{
   letter-spacing: 0.1em;
   font-weight: 900;
   font-size: 1.25em;
-  background-color: #2D3047;
+  background-color: #1A385A;
   color: #FFFFFF;
 
   &:hover{
@@ -37,7 +45,7 @@ h2,h3,h4,h5,h6,p{
   font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 400;
   display: inline-flex;
-  background-color: #2D3047;
+  background-color: #1A385A;
   color: #FFFFFF;
 
   &:hover{
@@ -46,7 +54,7 @@ h2,h3,h4,h5,h6,p{
 }
 
 .footer{
-  background-color: #2D3047;
+  background-color: #1A385A;
   color: #FFFFFF;
   height: auto;
   margin: 0em;
@@ -61,7 +69,7 @@ h2,h3,h4,h5,h6,p{
   font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
-  background-color: #2D3047;
+  background-color: #1A385A;
   color: #FFFFFF;
 
   &:hover{
@@ -90,4 +98,37 @@ html, body {
 .page-body{
   margin: 1em;
   flex-grow: 1;
+}
+
+.equal-height-cards{
+  .cell{
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.card{
+  // border-color: #E46F44;
+  // border-width: 0.25em;
+  background-color: #E8AA9B;
+  // color: #C8553D;
+}
+
+.card-section{
+  // background-color: #FFFFFF;
+//   accent-color: #F28F3B;
+  text-align: center;
+}
+
+.card-divider{
+  background-color: #E46F44;
+  text-align: center;
+
+  .itinerary-description{
+    font-style: italic;
+  }
+}
+
+.page-title{
+  text-align: center;
 }
