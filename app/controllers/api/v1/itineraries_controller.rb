@@ -4,6 +4,6 @@ class Api::V1::ItinerariesController < ApplicationController
   end
 
   def show
-    render json: Itinerary.find(params[:id])
+    render json: Itinerary.find(params[:id]), serializer: ItineraryShowPageSerializer
   end
 end
