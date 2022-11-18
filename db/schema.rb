@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_16_183456) do
+ActiveRecord::Schema.define(version: 2022_11_17_205034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "latitude"
-    t.integer "longitude"
+    t.string "latitude"
+    t.string "longitude"
     t.string "picture"
     t.bigint "country_id", null: false
     t.datetime "created_at", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_11_16_183456) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name", null: false
+    t.string "country_code"
     t.string "picture"
     t.bigint "continent_id", null: false
     t.datetime "created_at", null: false
@@ -42,20 +43,43 @@ ActiveRecord::Schema.define(version: 2022_11_16_183456) do
     t.index ["continent_id"], name: "index_countries_on_continent_id"
   end
 
+  create_table "destinations", force: :cascade do |t|
+    t.bigint "city_id", null: false
+    t.bigint "itinerary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_destinations_on_city_id"
+    t.index ["itinerary_id"], name: "index_destinations_on_itinerary_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "stop_id", null: false
+    t.bigint "itinerary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["itinerary_id"], name: "index_events_on_itinerary_id"
+    t.index ["stop_id"], name: "index_events_on_stop_id"
+  end
+
   create_table "itineraries", force: :cascade do |t|
     t.string "name", null: false
+    t.date "departure_date"
+    t.date "return_date"
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "stops", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "zip", null: false
+    t.string "telephone"
+    t.string "website"
     t.bigint "city_id", null: false
-    t.bigint "itinerary_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_stops_on_city_id"
-    t.index ["itinerary_id"], name: "index_stops_on_itinerary_id"
   end
 
   create_table "users", force: :cascade do |t|

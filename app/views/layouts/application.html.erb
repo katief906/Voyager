@@ -12,6 +12,7 @@
       <h1><a class="navbar-title" href="/">VOYAGER</a></h1>
       <div class="menu">
         <h4 class="navbar-link">
+          <%= link_to 'Explore Countries', continents_path, class: "navbar-link" %>
           <%- if current_user -%>
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-link" %>
           <%- else -%>

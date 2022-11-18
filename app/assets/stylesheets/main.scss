@@ -132,3 +132,14 @@ html, body {
 .page-title{
   text-align: center;
 }
+
+.destination-button{
+  display: block;
+  background-color: #769ABE;
+  color: #000000;
+
+  &:hover{
+    background-color: #FFD5c2;
+    color: #000000;
+  }
+}

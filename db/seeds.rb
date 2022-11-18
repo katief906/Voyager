@@ -29,10 +29,10 @@ beijing = City.create(name: "Beijing", country: china)
 shanghai = City.create(name: "Shanghai", country: china)
 tokyo = City.create(name: "Tokyo", country: japan)
 kyoto = City.create(name: "Kyoto", country: japan)
-paris = City.create(name: "Paris", country: france, latitude: 48.864716, longitude: 2.349014)
-lyon = City.create(name: "Lyon", country: france, latitude: 45.763420, longitude: 4.834277)
-madrid = City.create(name: "Madrid", country: spain, latitude: 40.416775, longitude: -3.703790)
-barcelona = City.create(name: "Barcelona", country: spain, latitude: 41.390205, longitude: 2.154007)
+paris = City.create(name: "Paris", country: france, latitude: "48.864716", longitude: "2.349014")
+lyon = City.create(name: "Lyon", country: france, latitude: "45.763420", longitude: "4.834277")
+madrid = City.create(name: "Madrid", country: spain, latitude: "40.416775", longitude: "-3.703790")
+barcelona = City.create(name: "Barcelona", country: spain, latitude: "41.390205", longitude: "2.154007")
 mexico_city = City.create(name: "Mexico City", country: mexico)
 oaxaca = City.create(name: "Oaxaca", country: mexico)
 san_jose = City.create(name: "San José", country: costa_rica)
@@ -54,32 +54,40 @@ itinerary_4 = Itinerary.create(name: "Natural Wonders of Mexico and Costa Rica")
 itinerary_5 = Itinerary.create(name: "Diving in Australia and New Zealand")
 itinerary_6 = Itinerary.create(name: "Hiking in Argentina and Chile")
 
-# Stops
-stop_1 = Stop.create(city: marrakesh, itinerary: itinerary_1)
-stop_2 = Stop.create(city: fes, itinerary: itinerary_1)
-stop_3 = Stop.create(city: cape_town, itinerary: itinerary_1)
-stop_4 = Stop.create(city: johannesburg, itinerary: itinerary_1)
-stop_5 = Stop.create(city: beijing, itinerary: itinerary_2)
-stop_6 = Stop.create(city: shanghai, itinerary: itinerary_2)
-stop_7 = Stop.create(city: tokyo, itinerary: itinerary_2)
-stop_8 = Stop.create(city: kyoto, itinerary: itinerary_2)
-stop_9 = Stop.create(city: paris, itinerary: itinerary_3)
-stop_10 = Stop.create(city: lyon, itinerary: itinerary_3)
-stop_11 = Stop.create(city: madrid, itinerary: itinerary_3)
-stop_12 = Stop.create(city: barcelona, itinerary: itinerary_3)
-stop_13 = Stop.create(city: mexico_city, itinerary: itinerary_4)
-stop_14 = Stop.create(city: oaxaca, itinerary: itinerary_4)
-stop_15 = Stop.create(city: san_jose, itinerary: itinerary_4)
-stop_16 = Stop.create(city: jaco, itinerary: itinerary_4)
-stop_17 = Stop.create(city: melbourne, itinerary: itinerary_5)
-stop_18 = Stop.create(city: sydney, itinerary: itinerary_5)
-stop_19 = Stop.create(city: auckland, itinerary: itinerary_5)
-stop_20 = Stop.create(city: christchurch, itinerary: itinerary_5)
-stop_21 = Stop.create(city: buenos_aires, itinerary: itinerary_6)
-stop_22 = Stop.create(city: mendoza, itinerary: itinerary_6)
-stop_23 = Stop.create(city: santiago, itinerary: itinerary_6)
-stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
+# Destinations
+destination_1 = Destination.create(city: marrakesh, itinerary: itinerary_1)
+destination_2 = Destination.create(city: fes, itinerary: itinerary_1)
+destination_3 = Destination.create(city: cape_town, itinerary: itinerary_1)
+destination_4 = Destination.create(city: johannesburg, itinerary: itinerary_1)
+destination_5 = Destination.create(city: beijing, itinerary: itinerary_2)
+destination_6 = Destination.create(city: shanghai, itinerary: itinerary_2)
+destination_7 = Destination.create(city: tokyo, itinerary: itinerary_2)
+destination_8 = Destination.create(city: kyoto, itinerary: itinerary_2)
+destination_9 = Destination.create(city: paris, itinerary: itinerary_3)
+destination_10 = Destination.create(city: lyon, itinerary: itinerary_3)
+destination_11 = Destination.create(city: madrid, itinerary: itinerary_3)
+destination_12 = Destination.create(city: barcelona, itinerary: itinerary_3)
+destination_13 = Destination.create(city: mexico_city, itinerary: itinerary_4)
+destination_14 = Destination.create(city: oaxaca, itinerary: itinerary_4)
+destination_15 = Destination.create(city: san_jose, itinerary: itinerary_4)
+destination_16 = Destination.create(city: jaco, itinerary: itinerary_4)
+destination_17 = Destination.create(city: melbourne, itinerary: itinerary_5)
+destination_18 = Destination.create(city: sydney, itinerary: itinerary_5)
+destination_19 = Destination.create(city: auckland, itinerary: itinerary_5)
+destination_20 = Destination.create(city: christchurch, itinerary: itinerary_5)
+destination_21 = Destination.create(city: buenos_aires, itinerary: itinerary_6)
+destination_22 = Destination.create(city: mendoza, itinerary: itinerary_6)
+destination_23 = Destination.create(city: santiago, itinerary: itinerary_6)
+destination_24 = Destination.create(city: valparaiso, itinerary: itinerary_6)
 
+# Stops
+eiffel = Stop.create(name: "Eiffel Tower", address: "Champ de Mars, 5 Av. Anatole France", zip: "75007", city: paris)
+hotel_regina_louvre = Stop.create(name: "Hotel Regina Louvre", address: "2 Pl. des Pyramides", zip: "75001", city: paris)
+la_sagrada_familia = Stop.create(name: "La Sagrada Familia", address: "C/ de Mallorca, 401", zip: "08013", city: barcelona)
+renaissance_barcelona_hotel = Stop.create(name: "Renaissance Barcelona Hotel", address: "C/ de Pau Claris, 122", zip: "08009", city: barcelona)
+
+# Events
+event_1 = Event.create(stop: eiffel, itinerary: itinerary_3)
 
 # ALL COUNTRIES
 # Africa
@@ -140,7 +148,7 @@ stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
 
 
 # Asia
-# afghanistan = Country.create(name: "Afghanistan", continent: asia)
+# afghanistan = Country.create(name: "Afghanistan", code: "AF" continent: asia)
 # armenia = Country.create(name: "Armenia", continent: asia)
 # azerbaijan = Country.create(name: "Azerbaijan", continent: asia)
 # bahrain = Country.create(name: "Bahrain", continent: asia)
@@ -190,55 +198,55 @@ stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
 # vietnam = Country.create(name: "Vietnam", continent: asia)
 # yemen = Country.create(name: "Yemen", continent: asia)
 
-# Europe
-# albania = Country.create(name: "Albania", continent: europe)
-# andorra = Country.create(name: "Andorra", continent: europe)
-# austria = Country.create(name: "Austria", continent: europe)
-# belarus = Country.create(name: "Belarus", continent: europe)
-# belgium = Country.create(name: "Belgium", continent: europe)
-# bosnia_and_herzegovina = Country.create(name: "Bosnia and Herzegovina", continent: europe)
-# bulgaria = Country.create(name: "Bulgaria", continent: europe)
-# croatia = Country.create(name: "Croatia", continent: europe)
-# cyprus = Country.create(name: "Cyprus", continent: europe)
-# czech_republic = Country.create(name: "Czech Republic", continent: europe)
-# denmark = Country.create(name: "Denmark", continent: europe)
-# estonia = Country.create(name: "Estonia", continent: europe)
-# finland = Country.create(name: "Finland", continent: europe)
-# france = Country.create(name: "France", continent: europe)
-# germany = Country.create(name: "Germany", continent: europe)
-# greece = Country.create(name: "Greece", continent: europe)
-# hungary = Country.create(name: "Hungary", continent: europe)
-# iceland = Country.create(name: "Iceland", continent: europe)
-# ireland = Country.create(name: "Ireland", continent: europe)
-# italy = Country.create(name: "Italy", continent: europe)
-# latvia = Country.create(name: "Latvia", continent: europe)
-# liechtenstein = Country.create(name: "Liechtenstein", continent: europe)
-# lithuania = Country.create(name: "Lithuania", continent: europe)
-# luxembourg = Country.create(name: "Luxembourg", continent: europe)
-# malta = Country.create(name: "Malta", continent: europe)
-# moldova = Country.create(name: "Moldova", continent: europe)
-# monaco = Country.create(name: "Monaco", continent: europe)
-# montenegro = Country.create(name: "Montenegro", continent: europe)
-# netherlands = Country.create(name: "Netherlands", continent: europe)
-# north_macedonia = Country.create(name: "North Macedonia", continent: europe)
-# norway = Country.create(name: "Norway", continent: europe)
-# poland = Country.create(name: "Poland", continent: europe)
-# portugal = Country.create(name: "Portugal", continent: europe)
-# romania = Country.create(name: "Romania", continent: europe)
-# russia = Country.create(name: "Russia", continent: europe)
-# san_marino = Country.create(name: "San Marino", continent: europe)
-# serbia = Country.create(name: "Serbia", continent: europe)
-# slovakia = Country.create(name: "Slovakia", continent: europe)
-# slovenia = Country.create(name: "Slovenia", continent: europe)
-# spain = Country.create(name: "Spain", continent: europe)
-# sweden = Country.create(name: "Sweden", continent: europe)
-# switzerland = Country.create(name: "Switzerland", continent: europe)
-# turkey = Country.create(name: "Turkey", continent: europe)
-# ukraine = Country.create(name: "Ukraine", continent: europe)
-# united_kingdom = Country.create(name: "United Kingdom", continent: europe)
-# vatican_city = Country.create(name: "Vatican City", continent: europe)
+# # Europe
+# albania = Country.create(name: "Albania", code: "AL", continent: europe)
+# andorra = Country.create(name: "Andorra", code: "AD", continent: europe)
+# austria = Country.create(name: "Austria", code: "AT", continent: europe)
+# belarus = Country.create(name: "Belarus", code: "BY", continent: europe)
+# belgium = Country.create(name: "Belgium", code: "", continent: europe)
+# bosnia_and_herzegovina = Country.create(name: "Bosnia and Herzegovina", code: "", continent: europe)
+# bulgaria = Country.create(name: "Bulgaria", code: "", continent: europe)
+# croatia = Country.create(name: "Croatia", code: "", continent: europe)
+# cyprus = Country.create(name: "Cyprus", code: "", continent: europe)
+# czech_republic = Country.create(name: "Czech Republic", code: "", continent: europe)
+# denmark = Country.create(name: "Denmark", code: "", continent: europe)
+# estonia = Country.create(name: "Estonia", code: "", continent: europe)
+# finland = Country.create(name: "Finland", code: "", continent: europe)
+# france = Country.create(name: "France", code: "", continent: europe)
+# germany = Country.create(name: "Germany", code: "", continent: europe)
+# greece = Country.create(name: "Greece", code: "", continent: europe)
+# hungary = Country.create(name: "Hungary", code: "", continent: europe)
+# iceland = Country.create(name: "Iceland", code: "", continent: europe)
+# ireland = Country.create(name: "Ireland", code: "", continent: europe)
+# italy = Country.create(name: "Italy", code: "", continent: europe)
+# latvia = Country.create(name: "Latvia", code: "", continent: europe)
+# liechtenstein = Country.create(name: "Liechtenstein", code: "", continent: europe)
+# lithuania = Country.create(name: "Lithuania", code: "", continent: europe)
+# luxembourg = Country.create(name: "Luxembourg", code: "", continent: europe)
+# malta = Country.create(name: "Malta", code: "", continent: europe)
+# moldova = Country.create(name: "Moldova", code: "", continent: europe)
+# monaco = Country.create(name: "Monaco", code: "", continent: europe)
+# montenegro = Country.create(name: "Montenegro", code: "", continent: europe)
+# netherlands = Country.create(name: "Netherlands", code: "", continent: europe)
+# north_macedonia = Country.create(name: "North Macedonia", code: "", continent: europe)
+# norway = Country.create(name: "Norway", code: "", continent: europe)
+# poland = Country.create(name: "Poland", code: "", continent: europe)
+# portugal = Country.create(name: "Portugal", code: "", continent: europe)
+# romania = Country.create(name: "Romania", code: "", continent: europe)
+# russia = Country.create(name: "Russia", code: "", continent: europe)
+# san_marino = Country.create(name: "San Marino", code: "", continent: europe)
+# serbia = Country.create(name: "Serbia", code: "", continent: europe)
+# slovakia = Country.create(name: "Slovakia", code: "", continent: europe)
+# slovenia = Country.create(name: "Slovenia", code: "", continent: europe)
+# spain = Country.create(name: "Spain", code: "", continent: europe)
+# sweden = Country.create(name: "Sweden", code: "", continent: europe)
+# switzerland = Country.create(name: "Switzerland", code: "", continent: europe)
+# turkey = Country.create(name: "Turkey", code: "", continent: europe)
+# ukraine = Country.create(name: "Ukraine", code: "", continent: europe)
+# united_kingdom = Country.create(name: "United Kingdom", code: "", continent: europe)
+# vatican_city = Country.create(name: "Vatican City", code: "", continent: europe)
 
-# North America
+# # North America
 # antigua_and_barbuda = Country.create(name: "Antigua and Barbuda", continent: north_america)
 # bahamas = Country.create(name: "Bahamas", continent: north_america)
 # barbados = Country.create(name: "Barbados", continent: north_america)
@@ -264,7 +272,7 @@ stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
 # united_states_of_america = Country.create(name: "United States of America", continent: north_america)
 
 
-# Oceania
+# # Oceania
 # australia = Country.create(name: "Australia", continent: oceania)
 # fiji = Country.create(name: "Fiji", continent: oceania)
 # kiribati = Country.create(name: "Kiribati", continent: oceania)
@@ -281,7 +289,7 @@ stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
 # vanuatu = Country.create(name: "Vanuatu", continent: oceania)
 
 
-# South America
+# # South America
 # argentina = Country.create(name: "Argentina", continent: south_america)
 # bolivia = Country.create(name: "Bolivia", continent: south_america)
 # brazil = Country.create(name: "Brazil", continent: south_america)
@@ -294,3 +302,257 @@ stop_24 = Stop.create(city: valparaiso, itinerary: itinerary_6)
 # suriname = Country.create(name: "Suriname", continent: south_america)
 # uruguay = Country.create(name: "Uruguay", continent: south_america)
 # venezuela = Country.create(name: "Venezuela", continent: south_america)
+
+# Country.create(name: "Afghanistan", code: "AF")
+# Country.create(name: "Åland Islands", code: "AX")
+# Country.create(name: "Albania", code: "AL")
+# Country.create(name: "Algeria", code: "DZ")
+# Country.create(name: "American Samoa", code: "AS")
+# Country.create(name: "Andorra", code: "AD")
+# Country.create(name: "Angola", code: "AO")
+# Country.create(name: "Anguilla", code: "AI")
+# Country.create(name: "Antarctica", code: "AQ")
+# Country.create(name: "Antigua and Barbuda", code: "AG")
+# Country.create(name: "Argentina", code: "AR")
+# Country.create(name: "Armenia", code: "AM")
+# Country.create(name: "Aruba", code: "AW")
+# Country.create(name: "Australia", code: "AU")
+# Country.create(name: "Austria", code: "AT")
+# Country.create(name: "Azerbaijan", code: "AZ")
+# Country.create(name: "Bahamas", code: "BS")
+# Country.create(name: "Bahrain", code: "BH")
+# Country.create(name: "Bangladesh", code: "BD")
+# Country.create(name: "Barbados", code: "BB")
+# Country.create(name: "Belarus", code: "BY")
+# Country.create(name: "Belgium", code: "BE")
+# Country.create(name: "Belize", code: "BZ")
+# Country.create(name: "Benin", code: "BJ")
+# Country.create(name: "Bermuda", code: "BM")
+# Country.create(name: "Bhutan", code: "BT")
+# Country.create(name: "Bolivia", code: "BO")
+# Country.create(name: "Bonaire, Saint Eustatius, and Saba", code: "BQ")
+# Country.create(name: "Bosnia and Herzegovina", code: "BA")
+# Country.create(name: "Botswana", code: "BW")
+# Country.create(name: "Bouvet Island", code: "BV")
+# Country.create(name: "Brazil", code: "Brazil")
+# Country.create(name: "British Indian Ocean Territory", code: "IO")
+# Country.create(name: "British Virgin Islands", code: "VG")
+# Country.create(name: "Brunei", code: "BN")
+# Country.create(name: "Bulgaria", code: "BG")
+# Country.create(name: "Burkina Faso", code: "BF")
+# Country.create(name: "Burundi", code: "BI")
+# Country.create(name: "Cambodia", code: "KH")
+# Country.create(name: "Cameroon", code: "CM")
+# Country.create(name: "Canada", code: "CA")
+# Country.create(name: "Cayman Islands", code: "KY")
+# Country.create(name: "Central African Republic", code: "CF")
+# Country.create(name: "Chad", code: "TD")
+# Country.create(name: "Chile", code: "CL")
+# Country.create(name: "China", code: "CN")
+# Country.create(name: "Christmas Island", code: "CX")
+# Country.create(name: "Cocos [Keeling] Islands", code: "CC")
+# Country.create(name: "Colombia", code: "CO")
+# Country.create(name: "Comoros", code: "KM")
+# Country.create(name: "Cook Islands", code: "CK")
+# Country.create(name: "Costa Rica", code: "CR")
+
+# "HR"	"Croatia"
+# "CU"	"Cuba"
+# "CW"	"Curaçao"
+# "CY"	"Cyprus"
+# "CZ"	"Czech Republic"
+# "DK"	"Denmark"
+# "DJ"	"Djibouti"
+# "DM"	"Dominica"
+# "DO"	"Dominican Republic"
+# "CD"	"DR Congo"
+# "EC"	"Ecuador"
+# "EG"	"Egypt"
+# "SV"	"El Salvador"
+# "GQ"	"Equatorial Guinea"
+# "ER"	"Eritrea"
+# "EE"	"Estonia"
+# "SZ"	"Eswatini"
+# "ET"	"Ethiopia"
+# "FK"	"Falkland Islands"
+# "FO"	"Faroe Islands"
+# "FJ"	"Fiji"
+# "FI"	"Finland"
+# "FR"	"France"
+# "GF"	"French Guiana"
+# "PF"	"French Polynesia"
+# "TF"	"French Southern Territories"
+# "GA"	"Gabon"
+# "GE"	"Georgia"
+# "DE"	"Germany"
+# "GH"	"Ghana"
+# "GI"	"Gibraltar"
+# "GR"	"Greece"
+# "GL"	"Greenland"
+# "GD"	"Grenada"
+# "GP"	"Guadeloupe"
+# "GU"	"Guam"
+# "GT"	"Guatemala"
+# "GG"	"Guernsey"
+# "GW"	"Guinea-Bissau"
+# "GN"	"Guinea"
+# "GY"	"Guyana"
+# "HT"	"Haiti"
+# "JO"	"Hashemite Kingdom of Jordan"
+# "HM"	"Heard Island and McDonald Islands"
+# "HN"	"Honduras"
+# "HK"	"Hong Kong S.A.R"
+# "HU"	"Hungary"
+# "IS"	"Iceland"
+# "IN"	"India"
+# "ID"	"Indonesia"
+# "IR"	"Iran"
+# "IQ"	"Iraq"
+# "IE"	"Ireland"
+# "IM"	"Isle of Man"
+# "IL"	"Israel"
+# "IT"	"Italy"
+# "CI"	"Ivory Coast"
+# "JM"	"Jamaica"
+# "JP"	"Japan"
+# "JE"	"Jersey"
+# "KZ"	"Kazakhstan"
+# "KE"	"Kenya"
+# "KI"	"Kiribati"
+# "KW"	"Kuwait"
+# "KG"	"Kyrgyzstan"
+# "LA"	"Laos"
+# "LV"	"Latvia"
+# "LB"	"Lebanon"
+# "LS"	"Lesotho"
+# "LR"	"Liberia"
+# "LY"	"Libya"
+# "LI"	"Liechtenstein"
+# "LU"	"Luxembourg"
+# "MO"	"Macao S.A.R"
+# "MG"	"Madagascar"
+# "MW"	"Malawi"
+# "MY"	"Malaysia"
+# "MV"	"Maldives"
+# "ML"	"Mali"
+# "MT"	"Malta"
+# "MH"	"Marshall Islands"
+# "MQ"	"Martinique"
+# "MR"	"Mauritania"
+# "MU"	"Mauritius"
+# "YT"	"Mayotte"
+# "MX"	"Mexico"
+# "FM"	"Micronesia"
+# "MC"	"Monaco"
+# "MN"	"Mongolia"
+# "ME"	"Montenegro"
+# "MS"	"Montserrat"
+# "MA"	"Morocco"
+# "MZ"	"Mozambique"
+# "MM"	"Myanmar"
+# "NA"	"Namibia"
+# "NP"	"Nepal"
+# "AN"	"Netherlands Antilles"
+# "NL"	"Netherlands"
+# "NC"	"New Caledonia"
+# "NZ"	"New Zealand"
+# "NI"	"Nicaragua"
+# "NE"	"Niger"
+# "NG"	"Nigeria"
+# "NU"	"Niue"
+# "NF"	"Norfolk Island"
+# "KP"	"North Korea"
+# "MK"	"North Macedonia"
+# "MP"	"Northern Mariana Islands"
+# "NO"	"Norway"
+# "OM"	"Oman"
+# "PK"	"Pakistan"
+# "PW"	"Palau"
+# "PS"	"Palestine"
+# "PA"	"Panama"
+# "PG"	"Papua New Guinea"
+# "PY"	"Paraguay"
+# "PE"	"Peru"
+# "PH"	"Philippines"
+# "PN"	"Pitcairn Islands"
+# "PL"	"Poland"
+# "PT"	"Portugal"
+# "PR"	"Puerto Rico"
+# "QA"	"Qatar"
+# "CV"	"Republic of Cabo Verde"
+# "KR"	"Republic of Korea"
+# "XK"	"Republic of Kosovo"
+# "LT"	"Republic of Lithuania"
+# "MD"	"Republic of Moldova"
+# "NR"	"Republic of Nauru"
+# "ZA"	"Republic of South Africa"
+# "SS"	"Republic of South Sudan"
+# "CG"	"Republic of the Congo"
+# "RE"	"Réunion"
+# "RO"	"Romania"
+# "RU"	"Russia"
+# "RW"	"Rwanda"
+# "BL"	"Saint Barthélemy"
+# "SH"	"Saint Helena"
+# "LC"	"Saint Lucia"
+# "MF"	"Saint Martin"
+# "PM"	"Saint Pierre and Miquelon"
+# "WS"	"Samoa"
+# "SM"	"San Marino"
+# "ST"	"São Tomé and Príncipe"
+# "SA"	"Saudi Arabia"
+# "SN"	"Senegal"
+# "CS"	"Serbia and Montenegro"
+# "RS"	"Serbia"
+# "SC"	"Seychelles"
+# "SL"	"Sierra Leone"
+# "SG"	"Singapore"
+# "SX"	"Sint Maarten"
+# "SK"	"Slovakia"
+# "SI"	"Slovenia"
+# "SB"	"Solomon Islands"
+# "SO"	"Somalia"
+# "GS"	"South Georgia and the South Sandwich Islands"
+# "ES"	"Spain"
+# "LK"	"Sri Lanka"
+# "KN"	"St Kitts and Nevis"
+# "VC"	"St Vincent and Grenadines"
+# "SD"	"Sudan"
+# "SR"	"Suriname"
+# "SJ"	"Svalbard and Jan Mayen"
+# "SE"	"Sweden"
+# "CH"	"Switzerland"
+# "SY"	"Syria"
+# "TW"	"Taiwan ROC"
+# "TJ"	"Tajikistan"
+# "TZ"	"Tanzania"
+# "TH"	"Thailand"
+# "GM"	"The Gambia"
+# "TL"	"Timor-Leste"
+# "TG"	"Togo"
+# "TK"	"Tokelau"
+# "TO"	"Tonga"
+# "TT"	"Trinidad and Tobago"
+# "TN"	"Tunisia"
+# "TR"	"Turkey"
+# "TM"	"Turkmenistan"
+# "TC"	"Turks and Caicos Islands"
+# "TV"	"Tuvalu"
+# "UM"	"U.S. Minor Outlying Islands"
+# "VI"	"U.S. Virgin Islands"
+# "UG"	"Uganda"
+# "UA"	"Ukraine"
+# "AE"	"United Arab Emirates"
+# "GB"	"United Kingdom"
+# "US"	"United States of America"
+# "UY"	"Uruguay"
+# "UZ"	"Uzbekistan"
+# "VU"	"Vanuatu"
+# "VA"	"Vatican City"
+# "VE"	"Venezuela"
+# "VN"	"Vietnam"
+# "WF"	"Wallis and Futuna"
+# "EH"	"Western Sahara"
+# "YE"	"Yemen"
+# "ZM"	"Zambia"
+# "ZW"	"Zimbabwe"

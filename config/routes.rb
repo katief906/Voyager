@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   namespace :api do 
     namespace :v1 do
-      resources :itineraries, only: [:index, :show]
+      resources :itineraries, only: [:index, :show] do
+        resources :cities, only: [:show] do
+          resources :stops, only: [:index]
+        end
+      end
     end
   end
 
