@@ -5,7 +5,9 @@
         <div class="cell small-12 medium-6 large-4">
           <div class="card">
             <div class="card-section">
-              <h3><%= link_to country.name, country_path(country) %><h3>
+              <a href="/countries/<%= country.id %>">
+                <h3><%= country.name %><h3>
+              </a>
             </div>
           </div>
         </div>

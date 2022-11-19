@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name", null: false
-    t.string "country_code"
+    t.string "country_code", null: false
     t.string "picture"
     t.bigint "continent_id", null: false
     t.datetime "created_at", null: false
