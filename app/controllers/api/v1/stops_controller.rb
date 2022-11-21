@@ -1,4 +1,4 @@
-class Api::V1::StopsController < ApplicationController
+class Api::V1::StopsController < ApiController
   def index
     itinerary = Itinerary.find(params[:itinerary_id])
     render json: itinerary.stops.where(city_id: params[:city_id])
