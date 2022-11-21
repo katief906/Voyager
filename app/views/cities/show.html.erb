@@ -1,14 +1,3 @@
 <div class="grid-container">
-  <h1 class="cell page-title"><%= @city.name %> Itineraries</h1>
-  <div class="grid-x grid-margin-x equal-height-cards">
-    <div class="cell small-12 medium-6 large-4">
-      <% @itineraries.each do |itinerary| %>
-        <div class="card">
-          <div class="card-section">
-            <a href="/itineraries/<%= itinerary.id %>"><h3><%= itinerary.name %><h3></a>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <h1 class="cell page-title"><%= @city.name %></h1>
 </div>

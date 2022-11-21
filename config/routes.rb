@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
+  get '/itineraries', to: 'homes#index'
   get '/itineraries/:id', to: 'homes#index'
   get '/countries/:id', to: 'homes#index'
+  get '/countries/:id/cities/:id', to: 'homes#index'
+  get '/cities/:id', to: 'homes#index'
   
   namespace :api do 
     namespace :v1 do
@@ -20,13 +23,13 @@ Rails.application.routes.draw do
       resources :countries, only: [:show] do
         resources :cities, only: [:index]
       end
+
+      resources :cities, only: [:create, :show]
     end
   end
 
   resources :continents, only: [:index, :show]
 
   resources :countries, only: [:show]
-
-  resources :cities, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

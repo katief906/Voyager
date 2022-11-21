@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
+    t.integer "geonameid"
     t.string "latitude"
     t.string "longitude"
+    t.integer "population"
     t.string "picture"
     t.bigint "country_id", null: false
     t.datetime "created_at", null: false

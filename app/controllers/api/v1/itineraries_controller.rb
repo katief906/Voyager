@@ -1,4 +1,4 @@
-class Api::V1::ItinerariesController < ApplicationController
+class Api::V1::ItinerariesController < ApiController
   def index
     render json: Itinerary.order(name: :asc)
   end

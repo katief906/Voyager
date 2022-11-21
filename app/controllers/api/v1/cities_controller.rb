@@ -1,4 +1,4 @@
-class Api::V1::CitiesController < ApplicationController
+class Api::V1::CitiesController < ApiController
   def index
     country = Country.find(params[:country_id])
     country_code = country.country_code
@@ -14,5 +14,21 @@ class Api::V1::CitiesController < ApplicationController
     parsed_response = JSON.parse(api_response.body)
 
     render json: parsed_response
+  end
+
+  def show
+    city = City.find(params[:id])
+    render json: city
+  end
+
+  def create
+    city = City.find_or_create_by(city_params)
+    render json: { city: city }
+  end
+
+  private
+
+  def city_params
+    params.require(:city).permit(:name, :geonameid, :latitude, :longitude, :population, :country_id)
   end
 end
