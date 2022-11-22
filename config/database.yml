@@ -83,3 +83,4 @@ production:
   database: voyager_production
   username: voyager
   password: <%= ENV['VOYAGER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
