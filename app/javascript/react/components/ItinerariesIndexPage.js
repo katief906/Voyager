@@ -23,14 +23,19 @@ const ItinerariesIndexPage = (props) => {
     fetchItineraries()
   }, [])
 
-  const itineraryTiles = itineraries.map((itinerary) => {
-    return(
-      <ItineraryTile
-        key={itinerary.id}
-        itinerary={itinerary}
-      />
-    )
-  })
+  let itineraryTiles
+
+  if (itineraries.length) {
+    itineraryTiles = itineraries.map((itinerary) => {
+      return(
+        <ItineraryTile
+          key={itinerary.id}
+          itinerary={itinerary}
+          cities={itinerary.city}
+        />
+      )
+    })
+  }
 
   return(
     <div className="grid-container">

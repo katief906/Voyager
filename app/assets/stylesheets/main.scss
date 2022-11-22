@@ -118,11 +118,14 @@ html, body {
   // background-color: #FFFFFF;
 //   accent-color: #F28F3B;
   text-align: center;
+  display: flex;
+  align-items: stretch;
 }
 
 .card-divider{
   background-color: #E46F44;
   text-align: center;
+  margin-bottom: 0em;
 
   .itinerary-description{
     font-style: italic;
@@ -142,4 +145,8 @@ html, body {
     background-color: #FFD5c2;
     color: #000000;
   }
+}
+
+a.card-section {
+  color: #000000
 }
