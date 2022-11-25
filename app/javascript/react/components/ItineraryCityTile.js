@@ -47,17 +47,17 @@ const ItineraryCityTile = (props) => {
       </h3>
       {stopTiles}
       <h4>Add a Stop:</h4>
-      <Link to="/">
+      <Link to={`/itineraries/${props.itineraryId}/cities/${props.cityId}/stops/new`}>
         <button className="button destination-button">
           <h5>Activities and Sight-Seeing</h5>
         </button>
       </Link>
-      <Link to="/">
+      <Link to={`/itineraries/${props.itineraryId}/cities/${props.cityId}/stops/new`}>
         <button className="button destination-button">
           <h5>Places to Eat and Drink</h5>
         </button>
       </Link>
-      <Link to="/">
+      <Link to={`/itineraries/${props.itineraryId}/cities/${props.cityId}/stops/new`}>
         <button className="button destination-button">
           <h5>Accommodations</h5>
         </button>

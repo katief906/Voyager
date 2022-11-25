@@ -7,6 +7,10 @@ class Api::V1::ItinerariesController < ApiController
     render json: Itinerary.find(params[:id]), serializer: ItineraryShowPageSerializer
   end
 
+  def new
+    render json: Country.order(name: :asc)
+  end
+
   def create
     itinerary = Itinerary.new(itinerary_params)
     city = City.find(params[:city_id])
