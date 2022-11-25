@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   get '/countries/:id/cities/:id', to: 'homes#index'
   get '/cities/:id', to: 'homes#index'
   get '/cities/:id/itineraries/new', to: 'homes#index'
-  
+
   namespace :api do 
     namespace :v1 do
       resources :itineraries, only: [:index, :show] do
         resources :cities, only: [:show] do
-          resources :stops, only: [:index]
+          resources :stops, only: [:index, :new]
         end
       end
     end
@@ -21,13 +21,16 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :countries, only: [:show] do
+      resources :countries, only: [:index, :show] do
         resources :cities, only: [:index]
       end
 
-      resources :cities, only: [:create, :show] do
+
+      resources :cities, only: [:index, :show, :new, :create] do
         resources :itineraries, only: [:create]
       end
+
+      resources :itineraries, only: [:new]
     end
   end
 

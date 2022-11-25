@@ -35,6 +35,7 @@ h2,h3,h4,h5,h6,p{
   font-size: 1.25em;
   background-color: #1A385A;
   color: #FFFFFF;
+  padding-bottom: 0.7rem;
 
   &:hover{
     color: #FFD5c2;
@@ -111,6 +112,8 @@ html, body {
   // border-color: #E46F44;
   // border-width: 0.25em;
   background-color: #E8AA9B;
+  display: flex;
+  align-items: stretch;
   // color: #C8553D;
 }
 
@@ -145,8 +148,4 @@ html, body {
     background-color: #FFD5c2;
     color: #000000;
   }
-}
-
-a.card-section {
-  color: #000000
 }

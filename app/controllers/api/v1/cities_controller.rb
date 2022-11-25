@@ -21,6 +21,9 @@ class Api::V1::CitiesController < ApiController
     render json: city
   end
 
+  def new
+  end
+
   def create
     city = City.find_or_create_by(city_params)
     render json: { city: city }

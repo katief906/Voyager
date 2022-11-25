@@ -4,6 +4,9 @@ class Api::V1::StopsController < ApiController
     render json: itinerary.stops.where(city_id: params[:city_id])
   end
 
+  def new
+  end
+
   private
   def stop_params
     params.require(:stop).permit(:name, :address, :zip, :telephone, :website, :city)

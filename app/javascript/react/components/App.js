@@ -5,6 +5,8 @@ import ItineraryShowPage from './ItineraryShowPage'
 import CountryShowPage from './CountryShowPage'
 import CityShowPage from './CityShowPage'
 import NewItineraryForm from './NewItineraryForm'
+import NewStopForm from './NewStopForm'
+import SecondNewItineraryForm from './SecondNewItineraryForm'
 
 export const App = (props) => {
   return (
@@ -12,8 +14,9 @@ export const App = (props) => {
       <Switch>
         <Route exact path="/" component={ItinerariesIndexPage} />
         <Route exact path="/itineraries" component={ItinerariesIndexPage} />
-        <Route exact path="/itineraries/new" component={NewItineraryForm} />
+        <Route exact path="/itineraries/new" component={SecondNewItineraryForm} />
         <Route exact path="/itineraries/:id" component={ItineraryShowPage} />
+        <Route exact path="/itineraries/:itinerary_id/cities/:city_id/stops/new" component={NewStopForm} />
         <Route exact path="/countries/:id" component={CountryShowPage} />
         <Route exact path="/cities/:id" component={CityShowPage} />
         <Route exact path="/cities/:id/itineraries/new" component={NewItineraryForm} />
