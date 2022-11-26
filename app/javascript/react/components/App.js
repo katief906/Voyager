@@ -7,6 +7,7 @@ import CityShowPage from './CityShowPage'
 import NewItineraryForm from './NewItineraryForm'
 import NewStopForm from './NewStopForm'
 import SecondNewItineraryForm from './SecondNewItineraryForm'
+import AboutTheDeveloper from './AboutTheDeveloper'
 
 export const App = (props) => {
   return (
@@ -20,6 +21,7 @@ export const App = (props) => {
         <Route exact path="/countries/:id" component={CountryShowPage} />
         <Route exact path="/cities/:id" component={CityShowPage} />
         <Route exact path="/cities/:id/itineraries/new" component={NewItineraryForm} />
+        <Route exact path="/about" component={AboutTheDeveloper} />
       </Switch>
     </BrowserRouter>
   )

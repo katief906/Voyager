@@ -10,21 +10,51 @@
 //   gray-purple: #DCD5DC;
 // }
 
-h1{
+// Overall Formatting
+h1 {
   font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 500;
 }
 
-h2,h3,h4,h5,h6,p{
+h2,h3,h4,h5,h6,p {
   font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 300;
 }
 
-.top-bar{
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-body{
+  margin: 1em;
+  flex-grow: 1;
+}
+
+.page-title{
+  text-align: center;
+}
+
+// Header
+.page-header {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.top-bar {
   background-color: #1A385A;
 }
 
-.top-bar>ul{
+.top-bar>ul {
   background-color: #1A385A;
 }
 
@@ -42,19 +72,25 @@ h2,h3,h4,h5,h6,p{
   }
 }
 
-.navbar-link{
+.navbar-link {
   font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 400;
   display: inline-flex;
   background-color: #1A385A;
   color: #FFFFFF;
 
-  &:hover{
+  &:hover {
     color: #FFD5c2;
   }
 }
 
-.footer{
+// Footer
+.page-footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.footer {
   background-color: #1A385A;
   color: #FFFFFF;
   height: auto;
@@ -62,62 +98,76 @@ h2,h3,h4,h5,h6,p{
   padding: 1em;
 }
 
-.footer-menu{
+.footer-menu {
   display: block;
+  text-align: center;
 }
 
-.footer-link{
+.footer-link {
+  text-align: center;
+  font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  background-color: #1A385A;
+  color: #FFFFFF;
+  list-style: none;
+
+  &:hover {
+    color: #FFD5c2;
+  }
+}
+
+.footer-link>a {
+  text-align: center;
   font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
   background-color: #1A385A;
   color: #FFFFFF;
 
-  &:hover{
+  &:hover {
     color: #FFD5c2;
   }
 }
 
-html, body {
-  box-sizing: border-box;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.page-header, .page-footer {
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.page-body{
-  margin: 1em;
-  flex-grow: 1;
-}
-
-.equal-height-cards{
-  .cell{
+// Cards
+.equal-height-cards {
+  .cell {
     display: flex;
     align-items: stretch;
   }
 }
 
-.card{
+.card {
   // border-color: #E46F44;
   // border-width: 0.25em;
   background-color: #E8AA9B;
   display: flex;
   align-items: stretch;
   // color: #C8553D;
+
+  &:hover {
+    background-color: #769ABE;
+    .card-divider {
+      background-color: #1A385A;
+      color: #FFFFFF;
+    }
+  }
+
+  .card-divider {
+    display: block;
+    background-color: #E46F44;
+    text-align: center;
+    margin-bottom: 0em;
+  }
+
+  .itinerary-description {
+    font-style: italic;
+    text-align: center;
+  }
 }
 
-.card-section{
+.card-section {
   // background-color: #FFFFFF;
 //   accent-color: #F28F3B;
   text-align: center;
@@ -125,27 +175,55 @@ html, body {
   align-items: stretch;
 }
 
-.card-divider{
-  background-color: #E46F44;
-  text-align: center;
-  margin-bottom: 0em;
+// .card-divider {
+//   background-color: #E46F44;
+//   text-align: center;
+//   margin-bottom: 0em;
 
-  .itinerary-description{
-    font-style: italic;
-  }
-}
+//   &:hover {
+//     background-color: #1A385A;
+//   }
 
-.page-title{
-  text-align: center;
-}
+//   .itinerary-description {
+//     font-style: italic;
+//   }
+// }
 
+// Buttons
 .destination-button{
   display: block;
   background-color: #769ABE;
   color: #000000;
 
-  &:hover{
+  &:hover {
     background-color: #FFD5c2;
     color: #000000;
   }
+}
+
+// Links
+.about-me-links {
+  list-style: none;
+}
+
+a.card-links {
+  display: inline-block;
+  text-align: center;
+  color: #000000;
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+// Images
+.headshot {
+  margin-bottom: 1em;
+}
+
+.about-me-text {
+  vertical-align: middle;
+}
+
+.about-me-title {
+  vertical-align: middle;
 }

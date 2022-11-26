@@ -13,11 +13,11 @@ const ItineraryTile = (props) => {
         <div className="card-section align-center">
           <h3>{props.itinerary.name}</h3>
         </div>
-        <div className="card-divider">
-          <a href={`/itineraries/${props.itinerary.id}`} className="card-links align-center">
-            <h5 className="itinerary-description">Check out this itinerary</h5>
-          </a>
-        </div>
+        <Link to={`/itineraries/${props.itinerary.id}`} className="card-links align-center">
+          <div className="card-divider">
+            <h5 className="itinerary-description">View Itinerary</h5>
+          </div>
+        </Link>
       </div>
     </div>
   )

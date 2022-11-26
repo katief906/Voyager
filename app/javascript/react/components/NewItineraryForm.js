@@ -19,8 +19,6 @@ const NewItineraryForm = (props) => {
     })
   }
 
-  console.log(itineraryRecord)
-
   const validForSubmission = () => {
     let submitErrors = {}
     const today = new Date().toISOString().slice(0, 10)
@@ -33,17 +31,17 @@ const NewItineraryForm = (props) => {
         }
       }
 
-      if (itineraryRecord["departure_date"] < today ) {
+      if ((itineraryRecord["departure_date"].trim() !== "") && (itineraryRecord["departure_date"] < today)) {
         submitErrors = {
           ...submitErrors,
-          ["departure_date"]: "must be on or after today's date"
+          ["departure date"]: "must be on or after today's date"
         }
       } 
 
-      if (itineraryRecord["return_date"] <= itineraryRecord["departure_date"]) {
+      if ((itineraryRecord["return_date"].trim() !== "") && (itineraryRecord["return_date"] <= itineraryRecord["departure_date"])) {
         submitErrors = {
           ...submitErrors,
-          ["return_date"]: "must be after selected Departure Date"
+          ["return date"]: "must be after selected Departure Date"
         }
       } 
     })
@@ -100,7 +98,7 @@ const NewItineraryForm = (props) => {
                 Itinerary Name
                 <input
                   type="text"
-                  placeholder="Ex: 30th Birthday Trip to France"
+                  placeholder="Ex: Oktoberfest in Germany"
                   name="name"
                   value={itineraryRecord.name}
                   onChange={handleInputChange}
