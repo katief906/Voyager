@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/countries/:id/cities/:id', to: 'homes#index'
   get '/cities/:id', to: 'homes#index'
   get '/cities/:id/itineraries/new', to: 'homes#index'
+  get '/about', to: 'homes#index'
 
   namespace :api do 
     namespace :v1 do
