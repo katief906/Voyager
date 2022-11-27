@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react"
+import _ from "lodash"
 import { Link } from "react-router-dom"
 
 const CityShowPage = (props) => {
-  const [city, setCity] = useState({
-    current_user: ""
-  })
+  const [city, setCity] = useState({})
   const [picture, setPicture] = useState({})
 
   const fetchCity = async() => {
@@ -16,11 +15,23 @@ const CityShowPage = (props) => {
         throw new Error(errorMessage)
       }
       const responseBody = await response.json()
-      setCity(responseBody)
+      setCity(responseBody.city)
     } catch(error) {
       console.error(`Error in fetch; ${error.message}`)
     }
   }
+
+  let newItineraryButton
+
+  if (city.current_user) {
+    newItineraryButton = 
+      <Link to={`/cities/${city.id}/itineraries/new`}>
+        <button className="button">
+          Add new itinerary
+        </button>
+      </Link>
+  }
+
 
   useEffect(() => {
     fetchCity()
@@ -35,11 +46,7 @@ const CityShowPage = (props) => {
         <li>Latitude: {city.latitude}</li>
         <li>Longitude: {city.longitude}</li>
       </ul>
-      <Link to={`/cities/${city.id}/itineraries/new`}>
-        <button className="button">
-          Add new itinerary
-        </button>
-      </Link>
+      {newItineraryButton}
     </div>
   )
 }

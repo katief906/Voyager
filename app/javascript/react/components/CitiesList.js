@@ -16,7 +16,6 @@ const CitiesList = (props) => {
 
   const fetchCities = async() => {
     try {
-      debugger
       const countryId = props.country.id
       const response = await fetch(`/api/v1/countries/${countryId}/cities`)
       const responseBody = await response.json()

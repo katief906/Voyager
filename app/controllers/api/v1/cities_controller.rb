@@ -17,7 +17,7 @@ class Api::V1::CitiesController < ApiController
 
   def show
     city = City.find(params[:id])
-    render json: city, serializer: CityShowSerializerSerializer
+    render json: city, serializer: CityShowPageSerializer
   end
 
   def new
