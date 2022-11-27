@@ -5,6 +5,7 @@ class Api::V1::StopsController < ApiController
   end
 
   def new
+    binding.pry
   end
 
   private
