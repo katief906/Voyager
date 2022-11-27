@@ -5,6 +5,7 @@ class CreateItineraries < ActiveRecord::Migration[5.2]
       t.date :departure_date
       t.date :return_date
       t.string :picture
+      t.belongs_to :user, null: false
       
       t.timestamps null: false
     end

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const CityShowPage = (props) => {
-  const [city, setCity] = useState({})
+  const [city, setCity] = useState({
+    current_user: ""
+  })
   const [picture, setPicture] = useState({})
 
   const fetchCity = async() => {

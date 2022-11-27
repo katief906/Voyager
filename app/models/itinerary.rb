@@ -4,6 +4,8 @@ class Itinerary < ApplicationRecord
   validates :name, presence: true
   validate :departure_date_on_or_after_today
   validate :return_date_after_departure_date
+
+  belongs_to :user
   
   has_many :destinations
   has_many :cities, through: :destinations

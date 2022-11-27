@@ -49,7 +49,7 @@ const ItineraryShowPage = (props) => {
       {itineraryCities}
       <Link to="/">
         <button className="button destination-button">
-          Add a City
+          <h5>Add a City</h5>
         </button>
       </Link>
     </div>

@@ -246,13 +246,19 @@ mendoza = City.find_or_create_by(name: "Mendoza", geonameid: 3844421, latitude: 
 santiago = City.find_or_create_by(name: "Santiago", geonameid: 3871336, latitude: "-33.45694", longitude: "-70.64827", population: 4837295, country: chile)
 valparaiso = City.find_or_create_by(name: "Valparaíso", geonameid: 3868626, latitude: "-33.036", longitude: "-71.62963", population: 282448, country: chile)
 
+# Users
+katie = User.create(first_name: "Katie", last_name: "Foley", email: "katief906@gmail.com", password: "Ilovecoding4fun!", role: "admin")
+karen = User.create(first_name: "Karen", last_name: "Wong", email: "karen@aol.com", password: "Bobalover2022")
+alana = User.create(first_name: "Alana", last_name: "Lee", email: "alana@outlook.com", password: "Earlgraymilktea4life")
+taylor = User.create(first_name: "Taylor", last_name: "Le", email: "taylor.l.kingston@gmail.com", password: "OoooLong5")
+
 # Itineraries
-itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa")
-itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan")
-itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain")
-itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica")
-itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand")
-itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile")
+itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa", user: taylor)
+itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan", user: alana)
+itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain", user: katie)
+itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica", user: karen)
+itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand", user: katie)
+itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile", user: katie)
 
 # Destinations
 destination_1 = Destination.find_or_create_by(city: marrakesh, itinerary: itinerary_1)

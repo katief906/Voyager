@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/itineraries', to: 'homes#index'
+  get '/itineraries/new', to: 'homes#authenticated'
   get '/itineraries/:id', to: 'homes#index'
+  get '/itineraries/:itinerary_id/cities/:city_id/stops/new', to: 'homes#authenticated'
   get '/countries/:id', to: 'homes#index'
-  get '/countries/:id/cities/:id', to: 'homes#index'
+  get '/countries/:country_id/cities/:city_id', to: 'homes#index'
   get '/cities/:id', to: 'homes#index'
-  get '/cities/:id/itineraries/new', to: 'homes#index'
+  get '/cities/:id/itineraries/new', to: 'homes#authenticated'
   get '/about', to: 'homes#index'
 
   namespace :api do 
