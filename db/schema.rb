@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "geonameid"
-    t.string "latitude"
-    t.string "longitude"
-    t.integer "population"
+    t.integer "geonameid", null: false
+    t.string "latitude", null: false
+    t.string "longitude", null: false
+    t.integer "population", null: false
     t.string "picture"
     t.bigint "country_id", null: false
     t.datetime "created_at", null: false
@@ -68,8 +68,10 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
     t.date "departure_date"
     t.date "return_date"
     t.string "picture"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
   create_table "stops", force: :cascade do |t|
@@ -85,6 +87,9 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "role", default: "member", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

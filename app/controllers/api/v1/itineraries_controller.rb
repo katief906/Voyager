@@ -1,4 +1,6 @@
 class Api::V1::ItinerariesController < ApiController
+  before_action :authenticate_user, only: [:new, :create]
+
   def index
     render json: Itinerary.order(name: :asc)
   end
@@ -26,5 +28,11 @@ class Api::V1::ItinerariesController < ApiController
 
   def itinerary_params
     params.require(:itinerary).permit(:name, :departure_date, :return_date)
+  end
+
+  def authenticate_user
+    if !user_signed_in?
+      render json: {error: ["You need to be signed in first."]}
+    end
   end
 end

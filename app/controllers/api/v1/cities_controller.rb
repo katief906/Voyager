@@ -2,7 +2,6 @@ class Api::V1::CitiesController < ApiController
   def index
     country = Country.find(params[:country_id])
     country_code = country.country_code
-
     api_key = ENV["REACT_X_RAPIDAPI_KEY"]
 
     api_response = Faraday.get do |request|
@@ -18,7 +17,7 @@ class Api::V1::CitiesController < ApiController
 
   def show
     city = City.find(params[:id])
-    render json: city
+    render json: city, serializer: CityShowPageSerializer
   end
 
   def new

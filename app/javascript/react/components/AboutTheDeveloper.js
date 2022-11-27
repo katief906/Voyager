@@ -4,35 +4,44 @@ import headshot from 'images/headshot.jpeg'
 const AboutTheDeveloper = (props) => {
   return(
     <div className="grid-container">
-      <div className="grid-x grid-margin-x">
-        <div className="cell large-12 small-text-center">
-          <h1>Katie Foley</h1>
-        </div>
-        <div className="cell large-4 headshot">
-          <img src={headshot} alt="Portraint of the developer, Katie Foley"/>
-        </div>
-        <div className="cell large-8">
-          <h5 className="about-me-text">Hi I'm Katie - welcome to the Voyager community! I created this app to help 
-        fellow travel-lovers have more fun and less stress on their journeys around the world. My first
-        trip overseas was back in 2013, when I visited France, Switzerland, and Italy. I fell in love
-        with communicating new languages, trying incredible food, coffee, and wine, and
-        learning about cultures different from my own. Since then, I've visited over another 27 countries
-        and plan to visit many more. I hope you enjoy using the app and that it helps you to curate
-        enjoyable, eye-opening travels!</h5>
-          <h2 className="cell">Links</h2>
-          <h5 className="cell about-me-links">
-            <a href="https://www.linkedin.com/in/kathleencfoley/">
-              LinkedIn
+      <div className="grid-x">
+        <div className="grid-container cell medium-6 large-4">
+          <h1 className="cell small-text-center">Katie Foley</h1>
+          <img src={headshot} alt="Portraint of the developer, Katie Foley" className="headshot"/>
+          <button className="button about-me-button">
+            <a href="https://www.linkedin.com/in/kathleencfoley/" target="_blank" className="about-me-link">
+              <h5>Katie's LinkedIn</h5>
             </a>
-          </h5>
-          <h5 className="cell about-me-links">
-            <a href="https://github.com/katief906">
-              Github
+          </button>
+          <button className="button about-me-button medium 8">
+            <a href="https://github.com/katief906" target="_blank" className="about-me-link">
+              <h5>Katie's Github</h5>
             </a>
-          </h5>
+          </button>
         </div>
+        <div className="grid-container cell medium-6 large-8 second-column">
+          <h1 className="holder">Holder</h1>
+          <h4 className="about-me-text">
+            Hi I'm Katie - welcome to the Voyager community! 
+          </h4>
+          <h4 className="about-me-text">
+            My first trip overseas was back in 2013, when I visited France, Switzerland, 
+            and Italy. I fell in love with communicating new languages, trying incredible 
+            food, coffee, and wine, and learning about cultures different from my own.
+          </h4>
+          <h4>
+          Since then, I've visited another 27 countries and have become a bit of an expert 
+          in planning out how to maximize my time, with several back-up plans should weather 
+          or luck turn against me. But that kind of planning doesn't come easily to everyone.
+          travelers. So, I created Voyager with the goal of helping fellow travel-lovers 
+          have more fun and less stress on their journeys around the world.
+          </h4>
+          <h4 className="about-me-text">
+            I hope you enjoy using the app to curate enjoyable, eye-opening travels!
+          </h4>
+        </div>
+      </div>
     </div>
-  </div>
   )
 }
 

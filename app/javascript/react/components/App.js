@@ -19,6 +19,7 @@ export const App = (props) => {
         <Route exact path="/itineraries/:id" component={ItineraryShowPage} />
         <Route exact path="/itineraries/:itinerary_id/cities/:city_id/stops/new" component={NewStopForm} />
         <Route exact path="/countries/:id" component={CountryShowPage} />
+        <Route exact path="/countries/:country_id/cities/:city_id" component={CityShowPage} />
         <Route exact path="/cities/:id" component={CityShowPage} />
         <Route exact path="/cities/:id/itineraries/new" component={NewItineraryForm} />
         <Route exact path="/about" component={AboutTheDeveloper} />

@@ -3,15 +3,17 @@
   <div class="grid-x grid-margin-x equal-height-cards">
     <% @continents.each do |continent| %>
       <div class="cell small-12 medium-6 large-4">
-        <div class="card">
+        <div class="card continent-card">
           <div class="card-section">
             <div class="card-picture">
               <img src=<%= continent.picture%> alt="map of the world with <%= continent.name %> shown in red"/>
             </div>
           </div>
-          <div class="card-section align-center">
-            <h3><%= link_to continent.name, continent_path(continent) %><h3>
-          </div>
+          <a href="/continents/<%= continent.id %>", class="continent-link">
+            <div class="card-divider align-center">
+              <h3><%= continent.name %><h3>
+            </div>
+          </a>
         </div>
       </div>
     <% end %>

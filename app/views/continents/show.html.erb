@@ -3,12 +3,12 @@
   <div class="grid-x grid-margin-x equal-height-cards">
       <% @countries.each do |country| %>
         <div class="cell small-12 medium-6 large-4">
-          <div class="card">
-            <div class="card-section align-center">
-              <a href="/countries/<%= country.id %>">
-                <h3><%= country.name %><h3>
+          <div class="card country-card">
+              <a href="/countries/<%= country.id %>" class="country-link">
+                <div class="card-section align-center">
+                  <h3><%= country.name %><h3>
+                </div>
               </a>
-            </div>
           </div>
         </div>
       <% end %>
