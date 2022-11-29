@@ -75,8 +75,18 @@ class Api::V1::StopsController < ApiController
     render json: api_response
   end
 
+  def create
+    city = City.find(params[:city_id])
+    itinerary= Itinerary.find(params[:itinerary_id])
+    stop = Stop.find_or_create_by(stop_params)
+    stop.city = city
+    Event.create(stop: stop, itinerary: itinerary)
+
+    render json: { stop: stop }
+  end
+
   private
   def stop_params
-    params.require(:stop).permit(:name, :address, :zip, :telephone, :website, :city)
+    params.require(:stop).permit(:name, :address, :zip, :telephone, :yelp_id, :latitude, :longitude, :image_url, :price, :yelp_url, :city)
   end
 end

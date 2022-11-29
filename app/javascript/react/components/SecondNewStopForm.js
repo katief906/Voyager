@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import _ from "lodash"
+import { Redirect } from "react-router-dom"
 import ErrorsList from "./ErrorsList"
 import StopTile from "./StopTile"
 
@@ -16,6 +17,10 @@ const SecondNewStopForm = (props) => {
   const [readyToMakeStopTiles, setReadyToMakeStopTiles] = useState(false)
   const [readyToMakeErrorCallout, setReadyToMakeErrorCallout] = useState(false)
   const [stopsList, setStopsList] = useState([])
+  const [selectedStop, setSelectedStop] = useState({})
+  const [readyToPostStop, setReadyToPostStop] = useState(false)
+  const [finalStop, setFinalStop] = useState({})
+  const [shouldRedirect, setShouldRedirect] = useState(false)
   
   const fetchCity = async() => {
     try {
@@ -31,10 +36,6 @@ const SecondNewStopForm = (props) => {
       console.error(`Error in fetch: ${error.message}`)
     }
   }
-
-  useEffect(() => {
-    fetchCity()
-  }, [])
 
   const handleInputChange = (event) => {
     setSearchRecord({
@@ -106,6 +107,8 @@ const SecondNewStopForm = (props) => {
           key={stop.id}
           stop={stop}
           stopId={stop.id}
+          setSelectedStop={setSelectedStop}
+          setReadyToPostStop={setReadyToPostStop}
         />
       )
     })
@@ -122,6 +125,39 @@ const SecondNewStopForm = (props) => {
     setReadyToMakeErrorCallout(false)
   }
 
+  const postStop = async() => {
+    try {
+      const itineraryId = props.match.params.itinerary_id
+      const cityId = props.match.params.city_id
+      const response = await fetch (`/api/v1/itineraries/${itineraryId}/cities/${cityId}/stops`, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ stop: selectedStop })
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        throw new Error(errorMessage)
+      }
+      const stopBody = await response.json()
+      if (stopBody.stop) {
+        setFinalStop(stopBody.stop)
+        setShouldRedirect(true)
+      } else if (stopBody.error) {
+        setErrors(stopBody.error)
+      }
+    } catch(error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
+  useEffect(() => {
+    fetchCity()
+  }, [])
+
   useEffect(() => {
     readyToMakeStopTiles === true && makeStopTiles()
   }, [readyToMakeStopTiles]) 
@@ -129,6 +165,15 @@ const SecondNewStopForm = (props) => {
   useEffect(() => {
     readyToMakeErrorCallout === true && makeErrorCallout()
   }, [readyToMakeErrorCallout]) 
+
+  useEffect(() => {
+    readyToPostStop === true && postStop()
+  }, [readyToPostStop])
+
+  if (shouldRedirect === true) {
+    const itineraryId = props.match.params.itinerary_id
+    return <Redirect to={`/itineraries/${itineraryId}`} />
+  }
 
   return(
     <div className="grid-container">

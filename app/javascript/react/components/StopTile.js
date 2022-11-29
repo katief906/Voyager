@@ -2,6 +2,24 @@ import React, { useState, useEffect } from "react"
 import _ from "lodash"
 
 const StopTile = (props) => {
+  const handleClick = (event) => {
+    debugger
+    event.preventDefault()
+    props.setSelectedStop({
+      name: props.stop.name,
+      address: props.stop.location.address1,
+      zip: props.stop.location.zip_code,
+      telephone: props.stop.display_phone,
+      yelp_id: props.stop.id,
+      latitude: props.stop.coordinates.latitude,
+      longitude: props.stop.coordinates.longitude,
+      image_url: props.stop.image_url,
+      price: props.stop.price,
+      yelp_url: props.stop.url,
+    })
+    props.setReadyToPostStop(true)
+  }
+
   return(
     <div className="cell small-12 medium-6 large-4">
       <div className="card stop-tile-card">
@@ -13,8 +31,8 @@ const StopTile = (props) => {
           <h5 className="stop-tile-text">{props.stop.location.display_address.join(", ")}</h5>
           <h5 className="stop-tile-text">{props.stop.rating}/5   |<a href={props.stop.url} target="_blank">   Yelp Reviews</a></h5>
         </div>
-        <div className="card-divider">
-          <button className="button">Add to itinerary</button>
+        <div onClick={handleClick} className="card-divider stop-tile-divider">
+          <h4 className="stop-tile-click">Add to itinerary</h4>
         </div>
       </div>
     </div>

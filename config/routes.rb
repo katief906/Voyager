@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :itineraries, only: [:index, :show] do
         resources :cities, only: [:show] do
-          resources :stops, only: [:index, :new]
+          resources :stops, only: [:index, :new, :create]
         end
       end
     end

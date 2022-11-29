@@ -75,12 +75,17 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
   end
 
   create_table "stops", force: :cascade do |t|
+    t.bigint "city_id", null: false
     t.string "name", null: false
     t.string "address", null: false
     t.string "zip", null: false
     t.string "telephone"
-    t.string "website"
-    t.bigint "city_id", null: false
+    t.string "yelp_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "image_url"
+    t.string "price"
+    t.string "yelp_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_stops_on_city_id"
