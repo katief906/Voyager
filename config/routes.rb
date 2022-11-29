@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/itineraries', to: 'homes#index'
   get '/itineraries/new', to: 'homes#authenticated'
   get '/itineraries/:id', to: 'homes#index'
-  get '/itineraries/:itinerary_id/cities/:city_id/stops/new', to: 'homes#authenticated'
+  get '/itineraries/:itinerary_id/cities/:city_id/stops/new', to: 'homes#index'
   get '/countries/:id', to: 'homes#index'
   get '/countries/:country_id/cities/:city_id', to: 'homes#index'
   get '/cities/:id', to: 'homes#index'

@@ -15,6 +15,7 @@ class Api::V1::ItinerariesController < ApiController
 
   def create
     itinerary = Itinerary.new(itinerary_params)
+    itinerary.user = current_user
     city = City.find(params[:city_id])
     if itinerary.save
       destination = Destination.create(itinerary: itinerary, city: city)

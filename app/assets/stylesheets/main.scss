@@ -166,7 +166,7 @@ html, body {
 
 .card-section {
   text-align: center;
-  display: flex;
+  display:flex;
   align-items: stretch;
 }
 
@@ -310,3 +310,32 @@ a.card-links {
     background-color: #769ABE;
   }
 }
+
+// Stop Tiles
+.stop-tile-card {
+  background-color: #FFFFFF;
+  border-color: #E8AA9B;
+  border-radius: 1em;
+}
+.stop-image {
+  height: 15em;
+  width: 25em;
+  overflow: hidden;
+  background-position: center;
+  object-fit: cover;
+}
+
+.stop-tile-section {
+  text-align: center;
+  display: block;
+}
+
+// .stop-tile-header {
+//   text-align: center;
+//   display: block;
+// }
+
+// .stop-tile-text {
+//   text-align: center;
+//   display: block;
+// }

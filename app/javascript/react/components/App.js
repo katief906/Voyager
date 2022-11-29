@@ -8,6 +8,7 @@ import NewItineraryForm from './NewItineraryForm'
 import NewStopForm from './NewStopForm'
 import SecondNewItineraryForm from './SecondNewItineraryForm'
 import AboutTheDeveloper from './AboutTheDeveloper'
+import SecondNewStopForm from './SecondNewStopForm'
 
 export const App = (props) => {
   return (
@@ -17,7 +18,7 @@ export const App = (props) => {
         <Route exact path="/itineraries" component={ItinerariesIndexPage} />
         <Route exact path="/itineraries/new" component={SecondNewItineraryForm} />
         <Route exact path="/itineraries/:id" component={ItineraryShowPage} />
-        <Route exact path="/itineraries/:itinerary_id/cities/:city_id/stops/new" component={NewStopForm} />
+        <Route exact path="/itineraries/:itinerary_id/cities/:city_id/stops/new" component={SecondNewStopForm} />
         <Route exact path="/countries/:id" component={CountryShowPage} />
         <Route exact path="/countries/:country_id/cities/:city_id" component={CityShowPage} />
         <Route exact path="/cities/:id" component={CityShowPage} />
