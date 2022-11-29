@@ -1,15 +1,18 @@
 import _ from "lodash"
 import React, { useState, useEffect } from "react"
+import StopTile from "./StopTile"
 
 const NewStopForm = (props) => {
-  const [city, setCity] = useState({})
+  const [city, setCity] = useState(null)
   const [readyToFetchStops, setReadyToFetchStops] = useState(false)
   const [stops, setStops] = useState([])
+  const [readyToMakeStopTiles, setReadyToMakeStopTiles] = useState(false)
   const [selectedStop, setSelectedStop] = useState({})
+
+  console.log(city)
 
   const fetchCity = async() => {
     try {
-      debugger
       const cityId = props.match.params.city_id
       const response = await fetch(`/api/v1/cities/${cityId}`)
       if (!response.ok) {
@@ -17,7 +20,6 @@ const NewStopForm = (props) => {
         throw new Error(errorMessage)
       }
       const responseBody = await response.json()
-      debugger
       setCity(responseBody.city)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
@@ -26,7 +28,6 @@ const NewStopForm = (props) => {
 
   const fetchStops = async() => {
     try {
-      debugger
       const itineraryId = props.match.params.itinerary_id
       const cityId = city.id
       const response = await fetch (`/api/v1/itineraries/${itineraryId}/cities/${cityId}/stops/new`)
@@ -35,28 +36,48 @@ const NewStopForm = (props) => {
         throw new Error(errorMessage)
       }
       const responseBody = await response.json()
-      setStops(responseBody)
+      if (responseBody['total'] > 0) {
+        setStops(responseBody.businesses)
+        setReadyToMakeStopTiles(true)
+      } else {
+        setStops(["No results found"])
+      }
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
     }
   }
 
   useEffect(() => {
-    debugger
     fetchCity()
   }, [])
 
-  let stopFormHeader
+  let stopsList
+
+  if (readyToMakeStopTiles === true) {
+    stopsList = stops.map((stop) => {
+      return(
+        <StopTile 
+          key={stop.id}
+          stop={stop}
+          stopYelpId={stop.id}
+        />
+      )
+    })
+  }
 
   useEffect(() => {
-    debugger
-    !_.isEmpty(city) && fetchStops()
+    !_.isEmpty(city) && setReadyToFetchStops(true)
   }, [city])
+
+  useEffect(() => {
+    (readyToFetchStops === true) && fetchStops()
+  }, [readyToFetchStops])
   
 
   return(
     <div>
       <h1>Add New Stop</h1>
+      {stopsList}
     </div>
   )
 }
