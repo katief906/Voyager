@@ -312,11 +312,6 @@ a.card-links {
 }
 
 // Stop Tiles
-.stop-tile-card {
-  background-color: #FFFFFF;
-  border-color: #E8AA9B;
-  border-radius: 1em;
-}
 .stop-image {
   height: 15em;
   width: 25em;
@@ -328,6 +323,16 @@ a.card-links {
 .stop-tile-section {
   text-align: center;
   display: block;
+}
+
+.stop-tile-divider {
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.stop-tile-click {
+  font-style: italic;
 }
 
 // .stop-tile-header {

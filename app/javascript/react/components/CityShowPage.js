@@ -41,7 +41,6 @@ const CityShowPage = (props) => {
     <div>
       <h1>{city.name}</h1>
       <ul>
-        <li>Geonameid: {city.geonameid}</li>
         <li>Population: {city.population}</li>
         <li>Latitude: {city.latitude}</li>
         <li>Longitude: {city.longitude}</li>

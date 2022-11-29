@@ -64,12 +64,10 @@ const NewItineraryForm = (props) => {
           body: JSON.stringify({ itinerary: itineraryRecord })
         })
         if (!response.ok) {
-          debugger
           const errorMessage = `${response.status} (${response.statusText})`
           throw new Error(errorMessage)
         }
         const itineraryBody = await response.json()
-        debugger
         if (itineraryBody.itinerary) {
           setItineraryRecord(itineraryBody.itinerary)
           setShouldRedirect(true)
@@ -77,7 +75,6 @@ const NewItineraryForm = (props) => {
           setErrors(itineraryBody.error)
         }
       } catch(error) {
-        debugger
         console.error(`Error in fetch: ${error.message}`)
       }
     }
