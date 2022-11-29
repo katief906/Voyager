@@ -79,14 +79,16 @@ class Api::V1::StopsController < ApiController
     city = City.find(params[:city_id])
     itinerary= Itinerary.find(params[:itinerary_id])
     stop = Stop.find_or_create_by(stop_params)
+    binding.pry
     stop.city = city
-    Event.create(stop: stop, itinerary: itinerary)
+    Event.create(stop_id: stop.id, itinerary_id: itinerary.id)
+    binding.pry
 
     render json: { stop: stop }
   end
 
   private
   def stop_params
-    params.require(:stop).permit(:name, :address, :zip, :telephone, :yelp_id, :latitude, :longitude, :image_url, :price, :yelp_url, :city)
+    params.require(:stop).permit(:name, :address, :zip, :telephone, :yelp_id, :latitude, :longitude, :image_url, :price, :yelp_url, :city_id)
   end
 end

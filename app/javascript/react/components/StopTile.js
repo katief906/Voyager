@@ -3,7 +3,6 @@ import _ from "lodash"
 
 const StopTile = (props) => {
   const handleClick = (event) => {
-    debugger
     event.preventDefault()
     props.setSelectedStop({
       name: props.stop.name,
@@ -16,6 +15,7 @@ const StopTile = (props) => {
       image_url: props.stop.image_url,
       price: props.stop.price,
       yelp_url: props.stop.url,
+      city_id: props.cityId
     })
     props.setReadyToPostStop(true)
   }
