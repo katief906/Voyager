@@ -109,6 +109,7 @@ const SecondNewStopForm = (props) => {
           stopId={stop.id}
           setSelectedStop={setSelectedStop}
           setReadyToPostStop={setReadyToPostStop}
+          cityId={props.match.params.city_id}
         />
       )
     })
