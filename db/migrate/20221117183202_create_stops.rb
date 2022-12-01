@@ -3,8 +3,8 @@ class CreateStops < ActiveRecord::Migration[5.2]
     create_table :stops do |t|
       t.belongs_to :city, null: false
       t.string :name, null: false
-      t.string :address, null: false
-      t.string :zip, null: false
+      t.string :address
+      t.string :zip
       t.string :telephone
       t.string :yelp_id
       t.float :latitude

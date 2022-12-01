@@ -79,10 +79,8 @@ class Api::V1::StopsController < ApiController
     city = City.find(params[:city_id])
     itinerary= Itinerary.find(params[:itinerary_id])
     stop = Stop.find_or_create_by(stop_params)
-    binding.pry
     stop.city = city
     Event.create(stop_id: stop.id, itinerary_id: itinerary.id)
-    binding.pry
 
     render json: { stop: stop }
   end

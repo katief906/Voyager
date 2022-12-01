@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 2022_11_17_205034) do
   create_table "stops", force: :cascade do |t|
     t.bigint "city_id", null: false
     t.string "name", null: false
-    t.string "address", null: false
-    t.string "zip", null: false
+    t.string "address"
+    t.string "zip"
     t.string "telephone"
     t.string "yelp_id"
     t.float "latitude"

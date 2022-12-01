@@ -1,7 +1,5 @@
 class Stop < ApplicationRecord
   validates :name, presence: true
-  validates :address, presence: true
-  validates :zip, presence: true
   
   belongs_to :city
 
