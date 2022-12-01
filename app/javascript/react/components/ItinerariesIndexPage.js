@@ -24,6 +24,7 @@ const ItinerariesIndexPage = (props) => {
   }, [])
 
   let itineraryTiles
+  let itineraryButton
 
   if (itineraries.length) {
     itineraryTiles = itineraries.map((itinerary) => {
@@ -39,13 +40,7 @@ const ItinerariesIndexPage = (props) => {
 
   return(
     <div className="grid-container">
-      <h3>
-        <Link to="/itineraries/new">
-          <button className = "button">
-            Add New Itinerary
-          </button>
-        </Link>
-      </h3>
+      {itineraryButton}
       <h1 className="cell page-title">All Itineraries:</h1>
       <div className="grid-x grid-margin-x equal-height-cards">
         {itineraryTiles}
