@@ -39,6 +39,8 @@ const ItineraryShowPage = (props) => {
     })
   }
 
+  let cityButton
+
   useEffect(() => {
     fetchItinerary()
   }, [])
@@ -47,11 +49,7 @@ const ItineraryShowPage = (props) => {
     <div>
       <h1 className="page-title">{itinerary.name}</h1>
       {itineraryCities}
-      <Link to="/">
-        <button className="button destination-button">
-          <h5>Add a City</h5>
-        </button>
-      </Link>
+      {cityButton}
     </div>
   )
 }
