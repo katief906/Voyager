@@ -34,7 +34,7 @@ const CountryShowPage = (props) => {
   return(
     <div>
       <h1 className = "page-title">Cities in {country.name}</h1>
-      <p className="text-center">Showing all cities with populations over 100,000</p>
+      <p className="text-center population-size">Showing all cities with populations over 100,000</p>
       {citiesList}
     </div>
   )

@@ -253,12 +253,12 @@ alana = User.create(first_name: "Alana", last_name: "Lee", email: "alana@outlook
 taylor = User.create(first_name: "Taylor", last_name: "Le", email: "taylor.l.kingston@gmail.com", password: "OoooLong5")
 
 # Itineraries
-itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa", user: taylor)
-itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan", user: alana)
-itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain", user: katie)
-itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica", user: karen)
-itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand", user: katie)
-itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile", user: katie)
+itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa", user_id: 4)
+itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan", user_id: 3)
+itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain", user_id: 1)
+itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica", user_id: 2)
+itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand", user_id: 1)
+itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile", user_id: 1)
 
 # Destinations
 destination_1 = Destination.find_or_create_by(city: marrakesh, itinerary: itinerary_1)

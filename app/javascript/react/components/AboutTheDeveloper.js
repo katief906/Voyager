@@ -29,7 +29,7 @@ const AboutTheDeveloper = (props) => {
             and Italy. I fell in love with communicating new languages, trying incredible 
             food, coffee, and wine, and learning about cultures different from my own.
           </h4>
-          <h4>
+          <h4 className="about-me-text">
           Since then, I've visited another 27 countries and have become a bit of an expert 
           in planning out how to maximize my time, with several back-up plans should weather 
           or luck turn against me. But that kind of planning doesn't come easily to everyone.

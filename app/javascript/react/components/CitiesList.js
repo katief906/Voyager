@@ -89,12 +89,10 @@ const CitiesList = (props) => {
 
   return(
     <div>
-      <h5 className = "text-center">
+      <h4 className = "text-center">
         {message}
-      </h5>
-      <ul>
-        {cityTiles}
-      </ul>
+      </h4>
+      {cityTiles}
     </div>
   )
 }

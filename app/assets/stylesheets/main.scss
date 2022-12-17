@@ -344,3 +344,15 @@ a.card-links {
 //   text-align: center;
 //   display: block;
 // }
+
+// Country Show Page
+.city-list-item {
+  &:hover{
+    cursor: pointer;
+    color: #E46F44;
+  }
+}
+
+.population-size {
+  font-style: italic;
+}

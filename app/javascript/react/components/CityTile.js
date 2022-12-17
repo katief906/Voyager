@@ -14,11 +14,9 @@ const CityTile = (props) => {
   }
 
   return(
-    <li>
-      <div onClick={handleClick}>
-        {props.city.name}
-      </div>
-    </li>
+    <h5 className="text-center">
+        <a className="city-list-item" onClick={handleClick}>{props.city.name}</a>
+    </h5>
   )
 }
 
