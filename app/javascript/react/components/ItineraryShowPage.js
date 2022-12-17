@@ -7,6 +7,11 @@ const ItineraryShowPage = (props) => {
     cities: [],
     stops: []
   })
+  const [readyToMakeCitiesAndStops, setReadyToMakeCitiesAndStops] = useState(false)
+  const [readyToCheckUser, setReadyToCheckUser] = useState(false)
+  const [cityButton, setCityButton] = useState(null)
+  const [deleteButton, setDeleteButton] = useState(null)
+  const [stopButton, setStopButton] = useState(null)
 
   const fetchItinerary = async() => {
     try {
@@ -19,6 +24,7 @@ const ItineraryShowPage = (props) => {
       const responseBody = await response.json()
       const itineraryData = responseBody.itinerary
       setItinerary(itineraryData)
+      setReadyToCheckUser(true)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -38,18 +44,31 @@ const ItineraryShowPage = (props) => {
       )
     })
   }
-
-  let cityButton
-
+    
+    const updateCityButton = () => {
+      debugger
+      if ((itinerary.current_user) && (itinerary.user.id === itinerary.current_user.id)) {
+        debugger
+        setCityButton(<button className="button">Add Another City</button>)
+        setDeleteButton(<button className="button" onClick={handleDelete}>Delete Itinerary</button>)
+      }
+    }
+    
   useEffect(() => {
     fetchItinerary()
   }, [])
+
+  useEffect(() => {
+    readyToCheckUser === true && updateCityButton()
+  }, [readyToCheckUser])
 
   return(
     <div>
       <h1 className="page-title">{itinerary.name}</h1>
       {itineraryCities}
       {cityButton}
+      <p></p>
+      {deleteButton}
     </div>
   )
 }
