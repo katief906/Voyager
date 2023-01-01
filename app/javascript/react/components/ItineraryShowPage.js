@@ -7,6 +7,11 @@ const ItineraryShowPage = (props) => {
     cities: [],
     stops: []
   })
+  const [readyToUpdateDates, setReadyToUpdateDates] = useState(false)
+  const [departureDate, setDepartureDate] = useState("")
+  const [returnDate, setReturnDate] = useState("")
+  const [readyToMakeCitiesAndStops, setReadyToMakeCitiesAndStops] = useState(false)
+  const [itineraryCities, setItineraryCities] = useState([])
 
   const fetchItinerary = async() => {
     try {
@@ -19,15 +24,39 @@ const ItineraryShowPage = (props) => {
       const responseBody = await response.json()
       const itineraryData = responseBody.itinerary
       setItinerary(itineraryData)
+      setReadyToUpdateDates(true)
+      setReadyToMakeCitiesAndStops(true)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
     }
   }
 
-  let itineraryCities = [] 
+  const updateDates = () => {
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+
+    const newDepartureDate = new Date(itinerary.departure_date).toLocaleDateString(undefined, options)
+    const newReturnDate = new Date(itinerary.return_date).toLocaleDateString(undefined, options)
+
+    setDepartureDate(newDepartureDate)
+    setReturnDate(newReturnDate)
+  }
+
+  useEffect(() => {
+    readyToUpdateDates === true && updateDates()
+  }, [readyToUpdateDates])
+
+  useEffect(() => {
+    readyToMakeCitiesAndStops === true && updateCities()
+  }, [readyToMakeCitiesAndStops])
+
   
-  if (itinerary.cities.length > 0){
-    itineraryCities = itinerary.cities.map((city) => {
+  const updateCities = () => {
+    const cityTiles = itinerary.cities.map((city) => {
       return(
         <ItineraryCityTile
           key={city.id}
@@ -37,19 +66,26 @@ const ItineraryShowPage = (props) => {
         />
       )
     })
+    setItineraryCities(cityTiles)
   }
-
-  let cityButton
-
+    
   useEffect(() => {
     fetchItinerary()
   }, [])
 
+  useEffect(() => {
+    readyToUpdateDates === true && updateDates()
+  }, [readyToUpdateDates])
+
+  useEffect(() => {
+    readyToMakeCitiesAndStops === true && updateCities()
+  }, [readyToMakeCitiesAndStops])
+
   return(
     <div>
       <h1 className="page-title">{itinerary.name}</h1>
+      <h5 className="text-center">{departureDate} -- {returnDate}</h5>
       {itineraryCities}
-      {cityButton}
     </div>
   )
 }
