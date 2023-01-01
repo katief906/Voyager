@@ -253,12 +253,12 @@ alana = User.create(first_name: "Alana", last_name: "Lee", email: "alana@outlook
 taylor = User.create(first_name: "Taylor", last_name: "Le", email: "taylor.l.kingston@gmail.com", password: "OoooLong5")
 
 # Itineraries
-itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa", user_id: 4)
-itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan", user_id: 3)
-itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain", user_id: 1)
-itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica", user_id: 2)
-itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand", user_id: 1)
-itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile", user_id: 1)
+itinerary_1 = Itinerary.find_or_create_by(name: "Wildlife in Morocco and South Africa", user_id: 4, departure_date: "2023-06-03", return_date: "2023-06-10")
+itinerary_2 = Itinerary.find_or_create_by(name: "Metropoli of China and Japan", user_id: 3, departure_date: "2023-06-03", return_date: "2023-06-18")
+itinerary_3 = Itinerary.find_or_create_by(name: "Wine of France & Spain", user_id: 1, departure_date: "2023-07-15", return_date: "2023-07-22")
+itinerary_4 = Itinerary.find_or_create_by(name: "Natural Wonders of Mexico and Costa Rica", user_id: 2, departure_date: "2023-08-12", return_date: "2023-08-23")
+itinerary_5 = Itinerary.find_or_create_by(name: "Diving in Australia and New Zealand", user_id: 1, departure_date: "2023-12-02", return_date: "2023-12-16")
+itinerary_6 = Itinerary.find_or_create_by(name: "Hiking in Argentina and Chile", user_id: 1, departure_date: "2023-11-04", return_date: "2023-11-15")
 
 # Destinations
 destination_1 = Destination.find_or_create_by(city: marrakesh, itinerary: itinerary_1)
