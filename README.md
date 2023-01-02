@@ -1,15 +1,18 @@
 # Voyager
 
-* Voyager is an app designed to help users research and plan itineraries to places all over the world. The app leverages city data from the Countries Cities API as well as hotel/restaurant/points of interest data from the Yelp Fusion API to make it as easy as possible for users to plan a fulfilling trip. The site includes pages dedicated to each continent, country, and city, as well as to a list of itineraries, individual itineraries and stops.
+Voyager is an app designed to help users research and plan itineraries to places all over the world. The app leverages city and country data from the Countries Cities API as well as accommodation, restaurant, and points of interest data from the Yelp Fusion API to make it as easy as possible for users to plan a fulfilling trip. The site includes pages dedicated to each continent, country, and city, as well as to all itineraries and detailed individual itineraries.
 
-voyager.onrender.com 
+<a href="voyager.onrender.com" target="_blank">voyager.onrender.com</a>
 
 # Programming
 
--	Backend: Ruby 2.7.3, Rails 5.2.5
--	Frontend: React
--	Database: PostgreSQL
--	Third-Party APIs: Countries Cities API (documentation: https://rapidapi.com/natkapral/api/countries-cities/), Yelp Fusion API (documentation: https://www.yelp.com/developers/documentation/v3/get_started) 
+Backend: Ruby 2.7.3, Rails 5.2.5
+Frontend: React
+Database: PostgreSQL
+
+Third-Party APIs: 
+- <a href="https://rapidapi.com/natkapral/api/countries-cities/" target="_blank">Countries Cities API</a>
+- <a href="https://www.yelp.com/developers/documentation/v3/get_started" target="_blank">Yelp Fusion API</a>
 
 # Development
 
@@ -23,16 +26,17 @@ voyager.onrender.com
 
 # Seeding Data
 
-*The app should have all continents and countries seeded prior to additional development. Please reference the seeds.rb file to find this data.
+The app should have all continents and countries seeded prior to additional development. Please reference the seeds.rb file to find this data.
 
-# A note about Cities data
+# A Note about Cities Data
 
-* Data for Cities is pulled from the Countries Cities API. This API limits the number of results returned, so I opted to search for cities over 100K residents. For this reason, some City Show Pages will say that a Country has "No cities found." In the future, I plan to fetch Cities based on the Country's overall population to ensure that each Country has Cities returned.
+City data is pulled from the Countries Cities API. This API limits the number of results returned, so I opted to search for cities over 100,000 residents. For this reason, some City Show Pages will say that a Country has "No cities found". In the future, I plan to fetch cities based on the country's overall population to ensure that each country has cities returned.
 
-# A note about Stops data
+# A Note about Stops Data
 
-* Data for Stops (ex: hotels, restaurants, activities) is pulled from the Yelp-Fusion API. Currently, Yelp only has data for 38 countries. To test out this app with the most success, please consider creating Itineraries that travel to the following countries:
+Stop data (ex: hotels, restaurants, activities) is pulled from the Yelp-Fusion API. Currently, Yelp only has data for 38 countries. 
 
+To test out this app with the most success, please consider creating itineraries that travel to the following countries:
 -	Argentina
 -	Australia
 -	Austria
@@ -66,20 +70,18 @@ voyager.onrender.com
 -	United Kingdom
 -	United States
 
-# Future features:
+# Future Features:
 
--	Pulling in images of each City on the City Show Page and for the Itinerary Show Page from the Unsplash API using the Unsplash SDK
--	Creating User Profile Pages where the User can see their Itineraries
--	Creating a 
--	Pulling in flight and airport data from the Amadeus API to help Users research and plan out their travel to and from each City on their Itinerary
--	Drag and drop for Stop Tiles on an Itinerary Show Page
--	Assigning particular dates/days of the trip to each City and displaying Stops based on what the User has added to each day of the trip
--	Drag and drop for Stop Tiles on an Itinerary Show Page
--	Pulling in weather data for each City and each day the User plans to be in that City, to help the User decide which Stops would be better suited for each day
--	Pulling in travel recommendations based on the Cities currently included in the Itinerary from the Amadeus API
+-	Pulling in images of each city on City Show Pages and Itinerary Show Pages from the Unsplash API via the Unsplash SDK
+-	Creating User Profile Pages where a user can see their itineraries
+-	Pulling in flight and airport data from the Amadeus API to help users research and plan out their travel to and from each city on their itinerary
+-	Drag and drop for stop tiles on Itinerary Show Pages
+-	Assigning particular dates/days of the trip to each city and displaying stops based on what the user has added to each day of the trip
+-	Pulling in weather data for each city and each day the user plans to be in a particular city, to help the user decide which stops would be better suited for each day
+-	Pulling in travel recommendations based on the cities currently included in an itinerary with data from the Amadeus API
 
 # Connect with the Developer
 
-- LinkedIn: https://www.linkedin.com/kathleencfoley
-- Email: katief906@gmail.com
-- GitHub: https://github.com/katief906
+- <a href="mailto: katief906@gmail.com">Email me</a>
+- <a href="https://www.linkedin.com/kathleencfoley" target="_blank">LinkedIn</a>
+- <a href="https://github.com/katief906" target="_blank">GitHub</a>
