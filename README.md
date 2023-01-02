@@ -6,9 +6,9 @@ Voyager is an app designed to help users research and plan itineraries to places
 
 # Programming
 
-Backend: Ruby 2.7.3, Rails 5.2.5
-Frontend: React
-Database: PostgreSQL
+- Backend: Ruby 2.7.3, Rails 5.2.5
+- Frontend: React
+- Database: PostgreSQL
 
 Third-Party APIs: 
 - <a href="https://rapidapi.com/natkapral/api/countries-cities/" target="_blank">Countries Cities API</a>
@@ -30,7 +30,7 @@ The app should have all continents and countries seeded prior to additional deve
 
 # A Note about Cities Data
 
-City data is pulled from the Countries Cities API. This API limits the number of results returned, so I opted to search for cities over 100,000 residents. For this reason, some City Show Pages will say that a Country has "No cities found". In the future, I plan to fetch cities based on the country's overall population to ensure that each country has cities returned.
+City data is pulled from the Countries Cities API. This API limits the number of results returned, so I opted to search for cities over 100,000 residents. For this reason, some Country Show Pages will display "no cities found". In the future, I plan to fetch cities based on a country's overall population to ensure that each country has cities returned.
 
 # A Note about Stops Data
 
