@@ -5,6 +5,8 @@ const CountryShowPage = (props) => {
   const [country, setCountry] = useState({
     name: ""
   })
+  const [readyToMakeCitiesList, setReadyToMakeCitiesList] = useState(false)
+  const [citiesList, setCitiesList] = useState([])
 
   const fetchCountry = async() => {
     try {
@@ -16,6 +18,7 @@ const CountryShowPage = (props) => {
       }
       const countryData = await response.json()
       setCountry(countryData)
+      setReadyToMakeCitiesList(true)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -25,10 +28,12 @@ const CountryShowPage = (props) => {
     fetchCountry()
   }, [])
 
-  let citiesList
-
-  if (country.name !== "") {
-    citiesList = <CitiesList country={country}/>
+  useEffect(() => {
+    readyToMakeCitiesList === true && createCitiesList()
+  }, [readyToMakeCitiesList])
+  
+  const createCitiesList = () => {
+    setCitiesList(<CitiesList country={country}/>)
   }
 
   return(
