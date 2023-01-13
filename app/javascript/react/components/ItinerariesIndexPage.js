@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import ItineraryTile from "./ItineraryTile"
+import greece from 'images/greece_desktop.jpg'
 
 const ItinerariesIndexPage = (props) => {
   const [itineraries, setItineraries] = useState([])
@@ -39,7 +40,13 @@ const ItinerariesIndexPage = (props) => {
   }
 
   return(
-    <div className="grid-container">
+    <div className="grid">
+      <div class="grid landing-page-container">
+        <img className="landing-page-cover-photo" src={greece} alt="Coastal landscape of Mykonos, Greece"/>
+        <div>
+          <h1 className="landing-page-cover-text">Explore the world</h1>
+        </div>
+      </div>
       {itineraryButton}
       <h1 className="cell page-title">All Itineraries:</h1>
       <div className="grid-x grid-margin-x equal-height-cards">

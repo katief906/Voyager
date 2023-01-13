@@ -10,9 +10,9 @@
 <body class="wrapper">
   <div data-sticky-container>
     <nav class="top-bar sticky" data-sticky data-margin-top="0">
-      <h1><a class="navbar-title" href="/">VOYAGER</a></h1>
+      <h3><a class="navbar-title" href="/">VOYAGER</a></h3>
       <div class="menu">
-        <h4 class="navbar-link">
+        <h5 class="navbar-link">
           <%- if current_user -%>
             <%= link_to 'Create New Itinerary', continents_path, class: "navbar-link" %>
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-link" %>
@@ -20,7 +20,7 @@
             <%= link_to 'Sign Up', new_user_registration_path, class: "navbar-link" %>
             <%= link_to 'Sign In', new_user_session_path, class: "navbar-link" %>
           <%- end -%>
-        </h4>
+        </h5>
       </div>
     </nav>
   </div>
@@ -47,8 +47,8 @@
   </div>
 </body>
 <footer class="page-footer footer">
-  <h4 class="footer-link">
+  <h5 class="footer-link">
     <a href="/about">About the Developer</a>
-  </h4>
+  </h5>
 </footer>
 </html>

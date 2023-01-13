@@ -9,6 +9,7 @@ import NewStopForm from './NewStopForm'
 import SecondNewItineraryForm from './SecondNewItineraryForm'
 import AboutTheDeveloper from './AboutTheDeveloper'
 import SecondNewStopForm from './SecondNewStopForm'
+import LandingPage from './LandingPage'
 
 export const App = (props) => {
   return (
