@@ -39,8 +39,8 @@ const ItineraryShowPage = (props) => {
       day: "numeric",
     }
 
-    const newDepartureDate = new Date(itinerary.departure_date).toLocaleDateString(undefined, options)
-    const newReturnDate = new Date(itinerary.return_date).toLocaleDateString(undefined, options)
+    const newDepartureDate = new Date(itinerary.departure_date.replace(/-/g, '\/')).toLocaleDateString(undefined, options)
+    const newReturnDate = new Date(itinerary.return_date.replace(/-/g, '\/')).toLocaleDateString(undefined, options)
 
     setDepartureDate(newDepartureDate)
     setReturnDate(newReturnDate)

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 // .color-palette{
 //   dark-blue: #1A385A;
@@ -12,16 +14,19 @@
 
 // Overall Formatting
 h1 {
-  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 500;
+  font-family: 'Roboto','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
 }
 
 h2,h3,h4,h5,h6,p {
-  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 300;
+  font-family: 'Roboto','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
 }
 
 html, body {
+  // background-image: image-url('greece_desktop.jpg');
+  // background-size: cover;
+  // background-position: center;
   box-sizing: border-box;
   height: 100%;
   padding: 0;
@@ -51,36 +56,36 @@ html, body {
 }
 
 .top-bar {
-  background-color: #1A385A;
+  background-color: #FFFFFF;
+  border-bottom: double;
 }
 
 .top-bar>ul {
-  background-color: #1A385A;
+  background-color: #FFFFFF;
 }
 
 .navbar-title{
-  font-family: 'Notable';
-  letter-spacing: 0.1em;
+  font-family: 'Roboto';
   font-weight: 900;
-  font-size: 1.25em;
-  background-color: #1A385A;
-  color: #FFFFFF;
-  padding-bottom: 0.7rem;
+  font-style: italic;
+  background-color: #FFFFFF;
+  color: #000000;
+  margin-left: 0.2em;
 
   &:hover{
-    color: #FFD5c2;
+    color: #E46F44;
   }
 }
 
 .navbar-link {
-  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 400;
+  font-family: 'Roboto','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
   display: inline-flex;
-  background-color: #1A385A;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #000000;
 
   &:hover {
-    color: #FFD5c2;
+    color: #E46F44;
   }
 }
 
@@ -91,11 +96,12 @@ html, body {
 }
 
 .footer {
-  background-color: #1A385A;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #000000;
   height: auto;
   margin: 0em;
   padding: 1em;
+  border-top: double;
 }
 
 .footer-menu {
@@ -105,11 +111,10 @@ html, body {
 
 .footer-link {
   text-align: center;
-  font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 400;
-  font-size: 1.25em;
-  background-color: #1A385A;
-  color: #FFFFFF;
+  font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  color: #000000;
   list-style: none;
 
   &:hover {
@@ -119,14 +124,13 @@ html, body {
 
 .footer-link>a {
   text-align: center;
-  font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 400;
-  font-size: 1.25em;
-  background-color: #1A385A;
-  color: #FFFFFF;
+  font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  color: #000000;
 
   &:hover {
-    color: #FFD5c2;
+    color: #E46F44;
   }
 }
 
@@ -174,7 +178,7 @@ html, body {
 .destination-button{
   display: block;
   background-color: #769ABE;
-  font-family: 'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #000000;
 
   &:hover {
@@ -206,7 +210,7 @@ a.card-links {
 
 // Forms
 .devise-form-container {
-  font-family: 'Oswald','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Roboto','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .devise-form-field {
@@ -355,4 +359,24 @@ a.card-links {
 
 .population-size {
   font-style: italic;
+}
+
+// Landing Page
+.landing-page-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.landing-page-cover-photo {
+  position: relative;
+  width:100%;
+}
+
+.landing-page-cover-text {
+  position: absolute;
+  font-style: italic;
+  font-weight: lighter;
+  font-size:6vw;
+  top: 15%;
+  left: 5%;
 }
